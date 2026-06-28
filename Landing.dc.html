@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{var j=[];var x=false;var S=30000;var f=3000;document.addEventListener("DOMContentLoaded",()=>{const H=window.Babel;const G="om-src-id";if(H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[G])){H.registerPlugin(G,({types:Y})=>({visitor:{JSXOpeningElement(U,Q){const J=U.node;if(J.name&&J.name.type==="JSXMemberExpression")return;for(let V=0;V<J.attributes.length;V++){const L=J.attributes[V];if(L.type==="JSXAttribute"&&L.name&&L.name.name==="data-om-id")return}const W=Q.file&&Q.file.opts&&Q.file.opts.filename||"?";const Z=J.loc&&J.loc.start;const z=`jsx:${W}:${J.start??0}:${Z?Z.line:0}:${Z?Z.column+1:0}`;J.attributes.push(Y.jsxAttribute(Y.jsxIdentifier("data-om-id"),Y.stringLiteral(z)))}}}))}const k="om-text-extract";let A=false;if(x&&H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[k])){const Y=window.React;if(Y&&Y.useSyncExternalStore&&Y.createElement){A=true;const U={};const Q=new Set;let J=0;window.__omTextO=U;window.__omTextSet=(z)=>{for(const V in z){const L=z[V];if(L==null)delete U[V];else U[V]=L}J++;Q.forEach((V)=>V())};const W=(z)=>{Q.add(z);return()=>Q.delete(z)};const Z=()=>J;window.__OmT=function z(V){Y.useSyncExternalStore(W,Z,Z);return Y.createElement("span",{"data-om-text":V.i,className:"__om-t"},V.i in U?U[V.i]:V.children)};H.registerPlugin(k,({types:z})=>{const V={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const L={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const _=($,C)=>z.logicalExpression("??",z.memberExpression(z.logicalExpression("||",z.memberExpression(z.identifier("window"),z.identifier("__omTextO")),z.objectExpression([])),z.stringLiteral($),true),C);const E=($)=>$.file&&$.file.opts&&$.file.opts.filename||"?";const B=($)=>$.file&&$.file.code||"";const b=($,C)=>{const X=(F)=>F&&F.start!=null&&F.end!=null&&(F.type==="StringLiteral"||F.type==="TemplateLiteral"&&F.expressions.length===0)?[F.start,F.end]:null;const N=X(C);if(N)return N;if(C&&C.type==="Identifier"){const F=$.scope.getBinding(C.name);if(F&&F.constant&&F.path.node.type==="VariableDeclarator"){return X(F.path.node.init)}}return null};const M=($,C,X)=>{const N=$.node;let F=false;const w=(K,q)=>{F=true;return z.jsxElement(z.jsxOpeningElement(z.jsxIdentifier("__OmT"),[z.jsxAttribute(z.jsxIdentifier("i"),z.stringLiteral(K))],false),z.jsxClosingElement(z.jsxIdentifier("__OmT")),[q],false)};const D=N.children.map((K)=>{if(K.type==="JSXText"){if(K.start==null||K.end==null)return K;const q=X.slice(K.start,K.end);const R=q.length-q.trimStart().length;const m=q.length-q.trimEnd().length;if(R+m>=q.length)return K;return w(`txt:${C}:${K.start+R}:${K.end-m}`,K)}if(K.type==="JSXExpressionContainer"){const q=b($,K.expression);if(q)return w(`str:${C}:${q[0]}:${q[1]}`,K)}return K});if(F)N.children=D};return{visitor:{JSXOpeningElement($,C){const X=$.node;const N=E(C);const F={};for(let w=0;w<X.attributes.length;w++){const D=X.attributes[w];if(D.type!=="JSXAttribute"||!D.name)continue;const K=D.name.name;if(!L[K])continue;if(!D.value||D.value.type!=="StringLiteral")continue;if(D.value.start==null||D.value.end==null)continue;const q=`txt:${N}:${D.value.start}:${D.value.end}`;F[K]=q;D.value=z.jsxExpressionContainer(_(q,z.stringLiteral(D.value.value)))}if(Object.keys(F).length){X.attributes.push(z.jsxAttribute(z.jsxIdentifier("data-om-text-attrs"),z.stringLiteral(JSON.stringify(F))))}},JSXElement($,C){const X=$.node.openingElement;const N=X&&X.name&&X.name.name;if(N==="__OmT")return;if(typeof N==="string"&&V[N])return;M($,E(C),B(C))},JSXFragment($,C){M($,E(C),B(C))}}}})}}const u=A?["transform-react-jsx-source",G,k]:["transform-react-jsx-source",G];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Y,U)=>{const Q=Y.getAttribute("data-plugins")||"";const J=u.filter((W)=>Q.indexOf(W)<0);if(J.length){Y.setAttribute("data-plugins",Q?`${Q},${J.join(",")}`:J.join(","))}if(!Y.hasAttribute("data-filename")){Y.setAttribute("data-filename",Y.getAttribute("src")||`inline-${U}`)}})});var y=window.parent;if(y&&y!==window){const H=(Q,J)=>{try{y.postMessage({__omelette_log:true,type:Q,data:J},"*")}catch{}};["log","warn","error"].forEach((Q)=>{const J=console[Q];console[Q]=(...W)=>{const Z=W.map((z)=>{try{return typeof z==="object"?JSON.stringify(z):String(z)}catch{try{return String(z)}catch{return"[unstringifiable]"}}}).join(" ");H(Q,Z);J.apply(console,W)}});window.addEventListener("error",(Q)=>{const J=Q.target;if(J&&J!==window&&J.tagName){const W=J.src||J.href||"";H("resource_error",`${J.tagName} failed to load: ${W}`)}else{H("error",`${Q.message||"Unknown error"} at ${Q.filename||"?"}:${Q.lineno||0}:${Q.colno||0}`)}},true);window.addEventListener("unhandledrejection",(Q)=>{const J=Q.reason;const W=J instanceof Error?`${J.message} ${J.stack}`:String(J);H("error",`Unhandled rejection: ${W}`)});const G=()=>{try{y.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")G();else window.addEventListener("load",G);if(window.ResizeObserver)new ResizeObserver(G).observe(document.documentElement);const k={};let A=0;window.claude={complete(Q){return new Promise((J,W)=>{if(!j.length){W(new Error("claude.complete: no parent origin"));return}const Z=`c${++A}`;const z=()=>setTimeout(()=>{delete k[Z];W(new Error(`claude.complete: no data for ${S/1000}s`))},S);const V=z();k[Z]={resolve:J,reject:W,text:"",t:V,arm:z};try{for(const L of j){y.postMessage({__om_api:true,id:Z,body:Q},L)}}catch(L){clearTimeout(V);delete k[Z];W(L)}})}};const u={};let Y=0;window.omelette={writeFile:(Q,J)=>new Promise((W,Z)=>{if(!j.length){W();return}const z=`f${++Y}`;const V=setTimeout(()=>{delete u[z];W()},f);u[z]={resolve:W,reject:Z,t:V};try{for(const L of j){y.postMessage({__om_file:true,id:z,op:"write",path:Q,content:J},L)}}catch{clearTimeout(V);delete u[z];W()}})};const U=(Q)=>{try{return JSON.stringify(Q)}catch{return JSON.stringify(String(Q))}};window.addEventListener("message",(Q)=>{if(j.indexOf(Q.origin)<0)return;if(Q.source!==y)return;const J=Q.data;if(!J)return;if(J.type==="omelette-preview-refresh"){if(typeof J.token!=="string"||!/^[0-9a-f.-]+(\.(rc|pr-[0-9]+))?(\.[0-9]+\.[0-9a-f]{16})?$/.test(J.token))return;const z=Math.max(1,Math.floor((J.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+J.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+z;return}if(J.__om_file_r){const z=u[J.id];if(!z)return;clearTimeout(z.t);delete u[J.id];if(J.ok)z.resolve();else z.reject(new Error(J.error||"write failed"));return}if(J.__om_api_r){const z=k[J.id];if(!z)return;if(J.error!=null){clearTimeout(z.t);delete k[J.id];z.reject(new Error(J.error));return}if(J.chunk!=null){clearTimeout(z.t);z.t=z.arm();z.text+=J.chunk;return}if(J.done){clearTimeout(z.t);delete k[J.id];z.resolve(J.text!=null?J.text:z.text);return}return}if(!J.__om_eval)return;const W=J;const Z=(z)=>{Q.source.postMessage({...z,__om_eval_r:1,id:W.id},Q.origin)};try{const z=(0,eval)(W.code);if(z&&typeof z.then==="function"){z.then((V)=>Z({ok:1,v:U(V)}),(V)=>Z({ok:0,e:String(V)}))}else{Z({ok:1,v:U(z)})}}catch(z){Z({ok:0,e:String(z)})}})}})();
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Marketing Landing" description="Fictio landing: hero, services, platforms, and about, on warm cream" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&amp;family=Cinzel:wght@500;600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap">
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.js"></script>
+<style>
+  body { margin: 0; background: var(--surface-page); font-family: var(--font-sans); color: var(--text-body); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+  .eyebrow { font-family: var(--font-wordmark); text-transform: uppercase; letter-spacing: var(--tracking-caps); font-size: var(--text-xs); font-weight: 500; color: var(--text-brand); }
+  .navlink { background: none; border: 0; cursor: pointer; padding: 8px 12px; font-family: var(--font-sans); font-weight: 500; font-size: var(--text-md); color: var(--text-body); border-radius: var(--radius-sm); }
+  .pcard { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: var(--space-7); cursor: pointer; text-align: left; display: flex; flex-direction: column; transition: box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out); }
+  .pcard:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .picon { flex: 0 0 auto; width: 58px; align-self: stretch; border-radius: var(--radius-md); background: var(--color-brand-soft); color: var(--teal-700); display: flex; align-items: center; justify-content: center; }
+  .picon svg.lucide { width: 24px; height: 24px; }
+  .svc-titlewrap { flex: 1; min-width: 0; }
+  .svc-title { display: block; background: var(--surface-inset); border-radius: var(--radius-sm); padding: 6px 12px; }
+  .faq { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden; }
+  .faq > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 28px; transition: background var(--dur-base) var(--ease-out); }
+  .faq > summary::-webkit-details-marker { display: none; }
+  .faq[open] > summary { background: var(--color-brand-tint); }
+  .faq-q { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; color: var(--text-strong); letter-spacing: -0.01em; }
+  .faq .chev { flex: 0 0 auto; color: var(--text-brand); transition: transform var(--dur-base) var(--ease-out); }
+  .faq[open] .chev { transform: rotate(180deg); }
+  .faq-body { padding: 2px 28px 26px; max-width: 80ch; }
+  .faq-body p { font-size: var(--text-md); color: var(--text-body); line-height: 1.7; margin: 0; }
+  .learn { display: inline-flex; align-items: center; gap: 5px; color: var(--text-brand); font-size: var(--text-sm); font-weight: 600; }
+  svg.lucide { width: 18px; height: 18px; stroke-width: 1.9; }
+  .cta-solid { height: 50px; padding: 0 26px; border-radius: var(--radius-md); border: 0; cursor: pointer; background: var(--sand-100); color: var(--teal-800); font-family: var(--font-sans); font-weight: 600; font-size: var(--text-md); }
+  .cta-prim { height: 50px; padding: 0 26px; border-radius: var(--radius-md); border: 0; cursor: pointer; background: var(--color-brand); color: var(--text-on-brand); font-family: var(--font-sans); font-weight: 600; font-size: var(--text-md); }
+  .cta-sec { height: 50px; padding: 0 26px; border-radius: var(--radius-md); border: 1px solid var(--border-default); cursor: pointer; background: var(--surface-card); color: var(--text-brand); font-family: var(--font-sans); font-weight: 600; font-size: var(--text-md); }
+  .acc { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden; }
+  .acc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 26px 30px; transition: background var(--dur-base) var(--ease-out); }
+  .acc > summary::-webkit-details-marker { display: none; }
+  .acc[open] > summary { background: var(--color-brand-tint); }
+  .acc-num { font-family: var(--font-wordmark); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--text-lg); font-weight: 600; color: var(--text-brand); }
+  .acc-title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 600; color: var(--text-strong); letter-spacing: -0.01em; }
+  .acc .chev { flex: 0 0 auto; color: var(--text-brand); transition: transform var(--dur-base) var(--ease-out); }
+  .acc[open] .chev { transform: rotate(180deg); }
+  .acc-body { padding: 4px 30px 30px; display: flex; flex-direction: column; gap: 16px; max-width: 76ch; }
+  .acc-body p { font-size: var(--text-lg); color: var(--text-body); line-height: 1.7; margin: 0; }
+  .flip { max-width: 74ch; margin: 0 0 22px; }
+  .flip-card { cursor: pointer; box-sizing: border-box; background: var(--color-brand-tint); border: 1px solid var(--teal-200); border-left: 3px solid var(--teal-600); border-radius: var(--radius-md); overflow: hidden; transition: background var(--dur-base) var(--ease-out); }
+  .flip:not(.is-flipped) .flip-card:hover { background: var(--teal-100); }
+  .flip-front { display: flex; gap: 12px; align-items: center; padding: 13px 18px; }
+  .flip-front .fchev { flex: 0 0 auto; margin-left: auto; color: var(--text-brand); transition: transform var(--dur-base) var(--ease-out); }
+  .flip.is-flipped .flip-front .fchev { transform: rotate(180deg); }
+  .flip-h { flex: 1; font-family: var(--font-display); font-weight: 600; font-size: var(--text-md); color: var(--teal-800); }
+  .flip-back { height: 0; overflow: hidden; transition: height 340ms var(--ease-out); }
+  .flip-back-inner { padding: 2px 18px 16px 44px; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://fictioconsulting.ca/#organization",
+      "name": "Fictio Consulting",
+      "url": "https://fictioconsulting.ca",
+      "description": "Fictio Consulting provides practical AI literacy training and consulting for educators and small businesses across Canada, based in Eastern Ontario.",
+      "slogan": "Shape What's Next",
+      "areaServed": {"@type": "Country", "name": "Canada"},
+      "address": {"@type": "PostalAddress", "addressRegion": "Eastern Ontario", "addressCountry": "CA"},
+      "knowsAbout": ["AI literacy training", "Microsoft 365 Copilot", "Anthropic Claude", "AI workshop delivery", "prompt engineering", "AI tool selection", "generative AI for education", "AI for small business"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Needs Assessment", "description": "A focused conversation to identify whether AI is the right solution. The outcome may include AI training, workflow changes, or honest guidance on scope."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Literacy Training", "description": "Hands-on training for educators and business teams built around the tasks and tools your people already work with."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Prompt Engineering for Teams", "description": "Focused workshops on writing effective prompts to get consistently better results from Microsoft 365 Copilot and Anthropic Claude."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Tool Selection Advisory", "description": "Guidance on choosing the right AI tools based on your existing infrastructure, budget, and workflows."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Platform Onboarding", "description": "A hands-on introduction to Microsoft 365 Copilot or Anthropic Claude for individuals or teams."}}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "We're not sure AI is the right fit yet - where do we start?", "acceptedAnswer": {"@type": "Answer", "text": "That's exactly what a Needs Assessment is for. We start with a conversation about what you're trying to do and where things feel slow or uncertain. From there, we can tell you honestly whether AI is likely to help, and if so, where to begin. You don't need to have a plan before reaching out."}},
+        {"@type": "Question", "name": "Do you work with individuals or only teams and organizations?", "acceptedAnswer": {"@type": "Answer", "text": "Both. Some clients are a single educator or business owner who wants to build their own skills before rolling anything out to a team. Others come to us with a department or staff group ready to train together. We adapt to the size and pace that makes sense for you."}},
+        {"@type": "Question", "name": "What if I have no technical background?", "acceptedAnswer": {"@type": "Answer", "text": "That's most of the people we work with. Our training is built around the tasks you already do, not around how AI works under the hood. You don't need to understand the technology to use it well, and we won't assume you do."}},
+        {"@type": "Question", "name": "We're a small business with no IT department - is this relevant for us?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Most of what we cover works through tools you likely already have access to, like Microsoft 365. There's no infrastructure to set up and no IT team required. If you have a laptop and a few hours, we can find a useful place to start."}},
+        {"@type": "Question", "name": "What's the difference between Microsoft 365 Copilot and ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPT is a general-purpose AI tool made by OpenAI, available to anyone with an account. Microsoft 365 Copilot is built into the Microsoft tools your team may already use and is covered under your organization's existing data protection policies. For most schools and businesses, Copilot is the safer and more practical starting point, and many already have access without realizing it."}},
+        {"@type": "Question", "name": "What happens if the Needs Assessment shows AI isn't the answer?", "acceptedAnswer": {"@type": "Answer", "text": "We tell you. If the conversation points toward a workflow issue, a process problem, or something outside what we currently support, we'll say so clearly. The goal is to help you find the right fit, not to sell a service that isn't one."}}
+      ]
+    }
+  ]
+}
+</script>
+</helmet>
+
+<div style="min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:30;background:rgba(244,239,228,0.85);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border-subtle)">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;height:74px">
+      <button class="navlink" style="display:flex;align-items:center;gap:11px;padding:0" onClick="{{ goHome }}">
+        <img src="../../assets/logo-mark.png" alt="Fictio" style="height:32px">
+        <span style="font-family:var(--font-wordmark);letter-spacing:0.16em;font-weight:600;font-size:15px;color:var(--teal-800)">FICTIO CONSULTING</span>
+      </button>
+      <nav style="display:flex;align-items:center;gap:6px">
+        <button class="navlink" onClick="{{ scrollServices }}">Services</button>
+        <button class="navlink" onClick="{{ showPlatforms }}">Platforms</button>
+        <button class="navlink" onClick="{{ showAbout }}">About</button>
+        <x-import component-from-global-scope="FictioConsultingDesignSystem_845f5e.Button" size="sm" onClick="{{ scrollContact }}" hint-size="150px,34px">Book a workshop</x-import>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ HOME ══════════════════════════════════════════════════════════ -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="position:relative;overflow:hidden">
+      <img src="../../assets/logo-mark.png" alt="" aria-hidden="true" style="position:absolute;right:-70px;top:30px;height:480px;opacity:0.06;pointer-events:none">
+      <div class="wrap" style="position:relative;padding:64px 32px 64px">
+        <span class="eyebrow">EASTERN ONTARIO · SERVING CLIENTS ACROSS CANADA</span>
+        <h1 style="font-family:var(--font-display);font-weight:600;font-size:clamp(3rem,6vw,4.75rem);line-height:1.04;letter-spacing:-0.025em;color:var(--text-strong);margin:18px 0 0;max-width:16ch">Practical AI fluency for small businesses and educators</h1>
+        <p style="font-size:var(--text-xl);line-height:1.5;color:var(--text-muted);max-width:52ch;margin:24px 0 0">Fictio Consulting builds hands-on AI skills that fit the way people actually work. We start where you and your team are and build from there, working across the tools you already have.</p>
+        <div style="display:flex;gap:14px;margin-top:34px">
+          <x-import component-from-global-scope="FictioConsultingDesignSystem_845f5e.Button" size="lg" block="true" style="width:210px" onClick="{{ scrollContact }}" hint-size="210px,52px">Contact Us</x-import>
+          <x-import component-from-global-scope="FictioConsultingDesignSystem_845f5e.Button" variant="secondary" size="lg" block="true" style="width:210px" onClick="{{ scrollServices }}" hint-size="210px,52px">See our services</x-import>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" style="padding:24px 0 64px">
+      <div class="wrap">
+        <span class="eyebrow">What we do</span>
+        <h2 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:600;letter-spacing:-0.02em;margin:12px 0 32px;color:var(--text-strong)">Ways we can help</h2>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px">
+
+          <button class="pcard" onClick="{{ openReadiness }}">
+            <div style="display:flex;align-items:stretch;gap:14px;margin-bottom:14px">
+              <span class="picon" style="width: 74px; height: 74px"><i data-lucide="compass"></i></span>
+              <span class="svc-titlewrap">
+                <h3 class="svc-title" style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:600;margin:0 0 6px;color:var(--text-strong)">Needs<br>Assessment</h3>
+              </span>
+            </div>
+            <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">We find the right fit for the problem, which is not always an AI one.</p>
+            <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
+          </button>
+
+          <button class="pcard" onClick="{{ openLiteracy }}">
+            <div style="display:flex;align-items:stretch;gap:14px;margin-bottom:14px">
+              <span class="picon" style="width: 74px; height: 74px"><i data-lucide="graduation-cap"></i></span>
+              <span class="svc-titlewrap">
+                <h3 class="svc-title" style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:600;margin:0 0 6px;color:var(--text-strong)">AI Literacy<br>Training</h3>
+              </span>
+            </div>
+            <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Hands-on training on the AI tools you already have, built around your actual workflows.</p>
+            <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
+          </button>
+
+          <button class="pcard" onClick="{{ openPrompting }}">
+            <div style="display:flex;align-items:stretch;gap:14px;margin-bottom:14px">
+              <span class="picon" style="width: 74px; height: 74px"><i data-lucide="message-square-text"></i></span>
+              <span class="svc-titlewrap">
+                <h3 class="svc-title" style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:600;margin:0 0 6px;color:var(--text-strong)">Prompt Engineering<br>for Teams</h3>
+              </span>
+            </div>
+            <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Get consistently better results from AI by learning to ask it the right way.</p>
+            <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
+          </button>
+
+          <button class="pcard" onClick="{{ openAdvisory }}">
+            <div style="display:flex;align-items:stretch;gap:14px;margin-bottom:14px">
+              <span class="picon" style="width: 74px; height: 74px"><i data-lucide="scale"></i></span>
+              <span class="svc-titlewrap">
+                <h3 class="svc-title" style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 600; margin: 0 0 6px; color: var(--text-strong); width: 293px; height: 72px">AI Tool Selection<br>Advisory</h3>
+              </span>
+            </div>
+            <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Not sure which AI tool is right for your team? We compare options against your reality.</p>
+            <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
+          </button>
+
+          <button class="pcard" onClick="{{ openOnboarding }}">
+            <div style="display:flex;align-items:stretch;gap:14px;margin-bottom:14px">
+              <span class="picon" style="width: 74px; height: 74px"><i data-lucide="rocket"></i></span>
+              <span class="svc-titlewrap">
+                <h3 class="svc-title" style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:600;margin:0 0 6px;color:var(--text-strong)">AI Platform<br>Onboarding</h3>
+              </span>
+            </div>
+            <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">A hands-on introduction to Microsoft 365 Copilot or Claude for individuals or teams that are just getting started.</p>
+            <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="get-started" style="padding:8px 0 72px">
+      <div class="wrap">
+        <div style="position:relative;overflow:hidden;background:var(--surface-brand);border-radius:var(--radius-2xl);padding:48px 56px;color:var(--text-on-brand);display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px">
+          <div style="max-width:48ch">
+            <span style="font-family:var(--font-wordmark);text-transform:uppercase;letter-spacing:var(--tracking-caps);font-size:var(--text-xs);font-weight:500;color:var(--teal-200)">Get started</span>
+            <h2 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:600;letter-spacing:-0.02em;margin:12px 0 14px;color:var(--sand-100)">Bring a real problem. Leave with a way of working.</h2>
+            <p style="margin:0 0 26px;color:var(--text-on-brand-muted);font-size:var(--text-lg);line-height:1.55;max-width:46ch">A short call is the fastest way to find which of our services fits your team.</p>
+            <div style="display:flex;gap:14px;flex-wrap:wrap">
+              <button class="cta-solid">Book a Workshop</button>
+              <button class="cta-solid" style="background:transparent;border:1px solid rgba(244,239,228,0.45);color:var(--sand-100)">Contact Us</button>
+            </div>
+          </div>
+          <img src="../../assets/logo-mark-cream.png" alt="" aria-hidden="true" style="height:188px;width:auto;opacity:0.92;justify-self:end">
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:8px 0 88px">
+      <div class="wrap">
+        <span class="eyebrow">FAQ</span>
+        <h2 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:600;letter-spacing:-0.02em;margin:12px 0 32px;color:var(--text-strong)">Common questions</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;max-width:880px">
+
+          <details class="faq" name="faq">
+            <summary>
+              <span class="faq-q">We're not sure AI is the right fit yet — where do we start?</span>
+              <i data-lucide="chevron-down" class="chev"></i>
+            </summary>
+            <div class="faq-body"><p>That's exactly what a Needs Assessment is for. We start with a conversation about what you're trying to do and where things feel slow or uncertain. From there, we can tell you honestly whether AI is likely to help, and if so, where to begin. You don't need to have a plan before reaching out.</p></div>
+          </details>
+
+          <details class="faq" name="faq">
+            <summary>
+              <span class="faq-q">Do you work with individuals or only teams and organizations?</span>
+              <i data-lucide="chevron-down" class="chev"></i>
+            </summary>
+            <div class="faq-body"><p>Both. Some clients are a single educator or business owner who wants to build their own skills before rolling anything out to a team. Others come to us with a department or staff group ready to train together. We adapt to the size and pace that makes sense for you.</p></div>
+          </details>
+
+          <details class="faq" name="faq">
+            <summary>
+              <span class="faq-q">What if I have no technical background?</span>
+              <i data-lucide="chevron-down" class="chev"></i>
+            </summary>
+            <div class="faq-body"><p>That's most of the people we work with. Our training is built around the tasks you already do, not around how AI works under the hood. You don't need to understand the technology to use it well, and we won't assume you do.</p></div>
+          </details>
+
+          <details class="faq" name="faq">
+            <summary>
+              <span class="faq-q">We're a small business with no IT department — is this relevant for us?</span>
+              <i data-lucide="chevron-down" class="chev"></i>
+            </summary>
+            <div class="faq-body"><p>Yes. Most of what we cover works through tools you likely already have access to, like Microsoft 365. There's no infrastructure to set up and no IT team required. If you have a laptop and a few hours, we can find a useful place to start.</p></div>
+          </details>
+
+          <details class="faq" name="faq">
+            <summary>
+              <span class="faq-q">What's the difference between Microsoft 365 Copilot and ChatGPT?</span>
+              <i data-lucide="chevron-down" class="chev"></i>
+            </summary>
+            <div class="faq-body"><p>ChatGPT is a general-purpose AI tool made by OpenAI, available to anyone with an account. Microsoft 365 Copilot is built into the Microsoft tools your team may already use — Word, Outlook, Teams, Excel — and is covered under your organization's existing data protection policies. For most schools and businesses, Copilot is the safer and more practical starting point, and many already have access without realizing it.</p></div>
+          </details>
+
+          <details class="faq" name="faq">
+            <summary>
+              <span class="faq-q">What happens if the Needs Assessment shows AI isn't the answer?</span>
+              <i data-lucide="chevron-down" class="chev"></i>
+            </summary>
+            <div class="faq-body"><p>We tell you. If the conversation points toward a workflow issue, a process problem, or something outside what we currently support, we'll say so clearly. The goal is to help you find the right fit, not to sell a service that isn't one.</p></div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ══ SERVICE DETAIL ════════════════════════════════════════════════ -->
+  <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <div class="wrap">
+      <button class="navlink" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-muted);padding:40px 0 0" onClick="{{ goHome }}">
+        <i data-lucide="arrow-left"></i> All services
+      </button>
+      <div style="display:grid;grid-template-columns:1.7fr 1fr;gap:56px;padding-top:20px;padding-bottom:72px">
+        <div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+            <span style="flex:0 0 auto;width:56px;height:56px;border-radius:var(--radius-lg);background:var(--color-brand-soft);color:var(--teal-700);display:flex;align-items:center;justify-content:center"><i data-lucide="{{ svc.icon }}"></i></span>
+            <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--text-faint)">{{ svc.kicker }}</span>
+          </div>
+          <h1 style="font-family:var(--font-display);font-size:var(--text-5xl);font-weight:600;letter-spacing:-0.025em;margin:0 0 16px;color:var(--text-strong)">{{ svc.title }}</h1>
+          <p style="font-size:var(--text-xl);color:var(--text-muted);line-height:1.5;margin:0 0 36px">{{ svc.long }}</p>
+
+          <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:600;margin:0 0 18px;color:var(--text-strong)">What you get</h2>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <sc-for list="{{ gets }}" as="g" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--border-subtle)">
+                <span style="flex:0 0 auto;width:38px;height:38px;border-radius:var(--radius-md);background:var(--surface-inset);color:var(--teal-700);display:flex;align-items:center;justify-content:center"><i data-lucide="{{ g.icon }}"></i></span>
+                <div>
+                  <div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:600;color:var(--text-strong);margin-bottom:3px">{{ g.title }}</div>
+                  <div style="color:var(--text-muted);font-size:var(--text-md);line-height:1.55">{{ g.desc }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <aside>
+          <div style="position:sticky;top:96px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:var(--space-7)">
+            <div style="font-family:var(--font-wordmark);text-transform:uppercase;letter-spacing:var(--tracking-caps);font-size:11px;color:var(--text-brand);margin-bottom:10px">Interested?</div>
+            <div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:600;color:var(--text-strong);line-height:1.2;margin-bottom:6px">What’s right for you?</div>
+            <div style="color:var(--text-muted);font-size:var(--text-sm);line-height:1.55;margin:0 0 20px">Tell us about your team and we’ll tailor this to your context and your budget.</div>
+            <button class="cta-prim" style="width:100%;margin-bottom:12px">Book a workshop</button>
+            <button class="cta-sec" style="width:100%">Let’s talk</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ══ ABOUT ═════════════════════════════════════════════════════════ -->
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <div class="wrap">
+      <div style="padding-top:48px;padding-bottom:12px">
+        <span class="eyebrow">About</span>
+        <h1 style="font-family:var(--font-display);font-size:var(--text-5xl);font-weight:600;letter-spacing:-0.025em;margin:16px 0 0;color:var(--text-strong)">We make AI useful, not abstract</h1>
+        <p style="font-size:var(--text-xl);color:var(--text-muted);max-width:54ch;margin:18px 0 0;line-height:1.5">Fictio Consulting builds practical AI fluency for small businesses and educators. We start where your team is and build from there.</p>
+      </div>
+
+      <section style="padding:36px 0 80px">
+        <div style="display:flex;flex-direction:column;gap:18px;max-width:880px">
+
+          <details class="acc" open="">
+            <summary>
+              <span style="display:flex;flex-direction:column;gap:5px">
+                <span class="acc-num">ABOUT US - WHO WE ARE</span>
+                
+              </span>
+              <i data-lucide="chevron-down" class="chev"></i>
+            </summary>
+            <div class="acc-body">
+              <p>Fictio Consulting is based in Eastern Ontario and works with small and medium-sized businesses and education teams across Canada. We focus on building practical AI fluency: hands-on skills that fit the way people actually work, not generic training built around a vendor pitch.</p>
+              <p>Most AI advice is written for people who already speak the language. That leaves out exactly the teams who’d benefit most: the bakery owner, the office manager, the teacher with thirty kids and no spare hour. Fictio Consulting exists to close that gap.</p>
+              <p>We start where your people are. We do not assume prior knowledge, and we do not waste time on things they will not use. By the end, the goal is confidence: knowing what the tool can do, how to ask it the right questions, and where it fits into the job.</p>
+            </div>
+          </details>
+
+          <details class="acc">
+            <summary>
+              <span style="display:flex;flex-direction:column;gap:5px">
+                <span class="acc-num">BACKGROUND - HOW WE GOT HERE</span>
+                
+              </span>
+              <i data-lucide="chevron-down" class="chev"></i>
+            </summary>
+            <div class="acc-body">
+              <p>Our background is in post-secondary education, where we spent years figuring out how to make technical concepts land for people who never asked to become technical. That is still what we do. We take tools like Microsoft 365 Copilot and Claude and show non-technical teams how to use them in ways that actually change how they work.</p>
+              <p>Before founding Fictio Consulting, we delivered more than 40 AI workshops in post-secondary settings, helping faculty and staff get practical with tools that felt overwhelming on day one. That experience shapes how we work: we know what it looks like when someone goes from skeptical to capable, and we build training around that moment.</p>
+            </div>
+          </details>
+
+        </div>
+      </section>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ══ PLATFORMS ═════════════════════════════════════════════════════ -->
+  <sc-if value="{{ isPlatforms }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <div class="wrap">
+      <div style="padding-top:48px;padding-bottom:12px">
+        <span class="eyebrow">Platforms</span>
+        <h1 style="font-family:var(--font-display);font-size:var(--text-5xl);font-weight:600;letter-spacing:-0.025em;margin:16px 0 0;color:var(--text-strong)">The two platforms we support</h1>
+        <p style="font-size:var(--text-xl);color:var(--text-muted);max-width:58ch;margin:18px 0 0;line-height:1.5">We focus on the tools your teams are most likely already using: Microsoft 365 Copilot and Anthropic Claude. Training is built around how each one fits your real work.</p>
+      </div>
+
+      <section style="padding:40px 0 80px;display:flex;flex-direction:column;gap:28px">
+
+        <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:var(--space-7)">
+          <div style="display:flex;align-items:center;gap:22px;margin-bottom:20px;flex-wrap:wrap">
+            <img src="../../assets/Copilot icon.png" alt="Microsoft 365 Copilot logo" style="height:64px;width:auto;object-fit:contain;flex:0 0 auto">
+            <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:600;letter-spacing:-0.02em;margin:0;color:var(--text-strong)">Microsoft 365 Copilot</h2>
+          </div>
+          <p style="font-size:var(--text-lg);color:var(--text-body);line-height:1.7;margin:0 0 22px;max-width:74ch">Microsoft 365 Copilot brings AI assistance directly into the apps your team already works in, including Word, Excel, Outlook, Teams, and PowerPoint. It can draft documents, summarize long email threads, build spreadsheets, and pull together information from across your files, all without leaving the tools people use every day.</p>
+
+          <div class="flip {{ eduFlipClass }}" onClick="{{ toggleEdu }}" role="button" tabindex="0">
+            <div class="flip-card">
+              <div class="flip-front">
+                <span class="fcap" style="flex:0 0 auto;color:var(--teal-700);display:flex"><i data-lucide="graduation-cap"></i></span>
+                <div class="flip-h">Are you an educator?</div>
+                <i data-lucide="chevron-down" class="fchev"></i>
+              </div>
+              <div class="flip-back">
+                <div class="flip-back-inner">
+                  <p style="margin:0;font-size:var(--text-md);color:var(--text-body);line-height:1.6">You may already have access to Microsoft 365 Copilot Chat through your school or district. A lot of educators do and never realize it, and many who know it is there are not sure how to actually use it. If that sounds like you, we can help you make the most of what you already have.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--border-subtle);padding-top:20px">
+            <div style="font-family:var(--font-wordmark);text-transform:uppercase;letter-spacing:var(--tracking-caps);font-size:11px;color:var(--text-brand);margin-bottom:8px">How we use it in training</div>
+            <p style="font-size:var(--text-md);color:var(--text-muted);line-height:1.65;margin:0;max-width:74ch">In training, we work inside your own Microsoft 365 environment so people learn Copilot on the documents and tasks they handle in real life. The focus is on practical wins: faster drafting, cleaner summaries, and a clear sense of where Copilot helps and where a person still needs to decide.</p>
+          </div>
+        </div>
+
+        <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:var(--space-7)">
+          <div style="display:flex;align-items:center;gap:22px;margin-bottom:20px;flex-wrap:wrap">
+            <img src="../../assets/Claude icon.png" alt="Anthropic Claude logo" style="height:64px;width:auto;object-fit:contain;flex:0 0 auto">
+            <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:600;letter-spacing:-0.02em;margin:0;color:var(--text-strong)">Anthropic Claude</h2>
+          </div>
+          <p style="font-size:var(--text-lg);color:var(--text-body);line-height:1.7;margin:0 0 22px;max-width:74ch">Claude is a conversational AI assistant from Anthropic, built to be helpful, honest, and safe. It is strong at writing, research, analysis, and working through long or complex documents, and it holds a careful, considered tone that suits sensitive and high-stakes work.</p>
+          <div style="border-top:1px solid var(--border-subtle);padding-top:20px">
+            <div style="font-family:var(--font-wordmark);text-transform:uppercase;letter-spacing:var(--tracking-caps);font-size:11px;color:var(--text-brand);margin-bottom:8px">How we use it in training</div>
+            <p style="font-size:var(--text-md);color:var(--text-muted);line-height:1.65;margin:0;max-width:74ch">In training, we show teams how to brief Claude well, structure clear prompts, and use it for drafting, research, and thinking through problems. We pay close attention to judgement: checking output, protecting sensitive information, and knowing when to rely on it and when not to.</p>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { view: 'home', activeId: 'readiness', eduFlipped: false };
+
+  SERVICES = [
+    {
+      id: 'readiness', icon: 'compass', kicker: 'Assessment · Honest Fit',
+      title: 'Needs Assessment',
+      long: "We start with the problem, not the technology. Together we figure out what is actually getting in your team's way, and what would genuinely help. Sometimes that is AI, and sometimes the right answer is a workflow change, some basic automation, or simply a clearer process. The point is honesty upfront: this is about finding the right fit, not selling you AI training.",
+      gets: [
+        { icon: 'search', title: 'A clear read on the real problem', desc: 'We look at how your team actually works before recommending anything.' },
+        { icon: 'target', title: 'The right fit, even if it is not AI', desc: 'A workflow change, basic automation, or a clearer process, when that is the honest answer.' },
+        { icon: 'compass', title: 'Straight guidance on scope', desc: 'Where we can help directly, and where a challenge falls outside our current scope, said plainly.' },
+      ],
+    },
+    {
+      id: 'literacy', icon: 'graduation-cap', kicker: 'Hands-on team training',
+      title: 'AI Literacy Training',
+      long: 'Hands-on training for your team on the AI tools you already have access to, built around your actual workflows. People leave knowing how to use AI on the job, not just in theory.',
+      gets: [
+        { icon: 'users', title: 'Training on your real tools', desc: 'We use the AI tools your team already has, with no new subscriptions required.' },
+        { icon: 'briefcase', title: 'Built around your work', desc: 'Sessions run on your actual documents, tasks, and decisions.' },
+        { icon: 'check-circle', title: 'Confidence on the job', desc: 'People leave knowing how to use AI in practice, not just in theory.' },
+      ],
+    },
+    {
+      id: 'prompting', icon: 'message-square-text', kicker: 'Patterns + prompt library',
+      title: 'Prompt Engineering for Teams',
+      long: 'Get consistently better results from AI by learning to ask it the right way. Includes reusable prompt patterns built for your specific context, plus a custom prompt library your people can keep using.',
+      gets: [
+        { icon: 'repeat', title: 'Reusable prompt patterns', desc: 'A small set of patterns built for your specific context and tasks.' },
+        { icon: 'library', title: 'A custom prompt library', desc: "A shared library your people can keep using long after we're done." },
+        { icon: 'trending-up', title: 'Consistent results', desc: 'Less trial-and-error, more dependable output across the team.' },
+      ],
+    },
+    {
+      id: 'advisory', icon: 'scale', kicker: 'Comparison · Recommendation',
+      title: 'AI Tool Selection Advisory',
+      long: 'Not sure which AI tool is right for your team? We compare options against your actual environment, budget, and workflows, and give you a clear recommendation you can act on with confidence.',
+      gets: [
+        { icon: 'git-compare', title: 'A grounded comparison', desc: 'Options weighed against your real environment, budget, and workflows.' },
+        { icon: 'badge-check', title: 'A clear recommendation', desc: 'One confident call, not a 40-tab spreadsheet to decode yourself.' },
+        { icon: 'shield-check', title: 'Decide with confidence', desc: 'Know why a tool fits before you commit time or money to it.' },
+      ],
+    },
+    {
+      id: 'onboarding', icon: 'rocket', kicker: 'Copilot or Claude · Getting Started',
+      title: 'AI Platform Onboarding',
+      long: "A hands-on introduction to Microsoft 365 Copilot or Claude for individuals or teams that are just getting started. We cover the basics, show how the tool fits into your actual workflows, and make sure you're not just learning something, but ready to use it.",
+      gets: [
+        { icon: 'book-open', title: 'The basics, hands-on', desc: 'A guided first run through Microsoft 365 Copilot or Claude, at your team\u2019s pace.' },
+        { icon: 'workflow', title: 'Fit to your workflows', desc: 'We show how the tool slots into the tasks your team already does day to day.' },
+        { icon: 'check-circle', title: 'Ready, not just aware', desc: 'People leave able to use the tool on real work, not just nodding along to a demo.' },
+      ],
+    },
+  ];
+
+  open(id) { this.setState({ view: 'detail', activeId: id }); this._top(); }
+  nav(view) { this.setState({ view }); this._top(); }
+  _top() { try { window.scrollTo({ top: 0, behavior: 'auto' }); } catch (e) {} }
+  _scrollTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - 86;
+    try { window.scrollTo({ top: y, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, y); }
+  }
+  _homeAnchor(id) {
+    if (this.state.view !== 'home') {
+      this.setState({ view: 'home' });
+      setTimeout(() => this._scrollTo(id), 90);
+    } else {
+      this._scrollTo(id);
+    }
+  }
+  goToServices() { this._homeAnchor('services'); }
+  goToContact() { this._homeAnchor('get-started'); }
+
+  componentDidMount() { this._icons(); }
+  componentDidUpdate() { this._icons(); }
+  _icons() { const r = () => window.lucide && window.lucide.createIcons(); r(); setTimeout(r, 60); }
+  _animateEdu(open) {
+    const back = document.querySelector('.flip-back');
+    if (!back) return;
+    // CSS handles the transition; JS just sets explicit pixel targets.
+    const target = back.scrollHeight;
+    if (open) {
+      back.style.height = target + 'px';
+      const done = (e) => {
+        if (e.propertyName !== 'height') return;
+        back.style.height = 'auto';
+        back.removeEventListener('transitionend', done);
+      };
+      back.addEventListener('transitionend', done);
+    } else {
+      back.style.height = back.scrollHeight + 'px';
+      void back.offsetWidth;
+      back.style.height = '0px';
+    }
+  }
+
+  renderVals() {
+    const { view, activeId, eduFlipped } = this.state;
+    const svc = this.SERVICES.find((s) => s.id === activeId) || this.SERVICES[0];
+    return {
+      eduFlipped,
+      eduFlipClass: eduFlipped ? 'is-flipped' : '',
+      toggleEdu: () => {
+        const open = !this.state.eduFlipped;
+        this.setState({ eduFlipped: open });
+        this._animateEdu(open);
+      },
+      isHome: view === 'home',
+      isDetail: view === 'detail',
+      isAbout: view === 'about',
+      isPlatforms: view === 'platforms',
+      svc,
+      gets: svc.gets,
+      openReadiness: () => this.open('readiness'),
+      openLiteracy: () => this.open('literacy'),
+      openPrompting: () => this.open('prompting'),
+      openAdvisory: () => this.open('advisory'),
+      openOnboarding: () => this.open('onboarding'),
+      showAbout: () => this.nav('about'),
+      showPlatforms: () => this.nav('platforms'),
+      goHome: () => this.nav('home'),
+      scrollServices: () => this.goToServices(),
+      scrollContact: () => this.goToContact(),
+    };
+  }
+}
+</script>
+</body>
+</html>

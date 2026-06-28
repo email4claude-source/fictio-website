@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.fourfoldconsulting.com.au)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d8a78"/>
+      <stop offset="100%" stop-color="#1C6055"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0%" stop-color="#F5F2E3" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F5F2E3" stop-opacity="0.55"/>
+    </linearGradient>
+    <path id="leaf" d="M0,-46 C 20,-30 22,18 0,46 C -22,18 -20,-30 0,-46 Z"/>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#sky)"/>
+
+  <!-- distant tree line -->
+  <g fill="#154a41" opacity="0.55">
+    <path d="M0 260 L30 220 L55 250 L80 200 L105 245 L130 215 L160 255 L190 210 L220 250 L250 205 L280 248 L310 215 L340 252 L370 218 L400 250 L400 300 L0 300 Z"/>
+  </g>
+
+  <!-- river -->
+  <path d="M-20 330 C 80 300, 140 360, 230 330 C 300 308, 350 345, 420 320 L420 500 L-20 500 Z" fill="url(#river)"/>
+  <path d="M-20 365 C 90 340, 150 390, 240 365 C 310 345, 360 380, 420 360 L420 500 L-20 500 Z" fill="#F5F2E3" opacity="0.25"/>
+
+  <!-- maple leaves drifting -->
+  <g transform="translate(110 120) rotate(15) scale(0.8)">
+    <use href="#leaf" fill="#E0A24B"/>
+    <line x1="0" y1="0" x2="0" y2="46" stroke="#9a6a26" stroke-width="2"/>
+    <line x1="0" y1="-8" x2="-12" y2="6" stroke="#9a6a26" stroke-width="1.4" opacity="0.7"/>
+    <line x1="0" y1="-8" x2="12" y2="6" stroke="#9a6a26" stroke-width="1.4" opacity="0.7"/>
+  </g>
+  <g transform="translate(250 80) rotate(-25) scale(1.05)">
+    <use href="#leaf" fill="#F2C879"/>
+    <line x1="0" y1="0" x2="0" y2="46" stroke="#9a6a26" stroke-width="2"/>
+    <line x1="0" y1="-8" x2="-12" y2="6" stroke="#9a6a26" stroke-width="1.4" opacity="0.7"/>
+    <line x1="0" y1="-8" x2="12" y2="6" stroke="#9a6a26" stroke-width="1.4" opacity="0.7"/>
+  </g>
+  <g transform="translate(295 215) rotate(40) scale(0.65)">
+    <use href="#leaf" fill="#D9824B"/>
+    <line x1="0" y1="0" x2="0" y2="46" stroke="#7a4a1f" stroke-width="2"/>
+    <line x1="0" y1="-8" x2="-12" y2="6" stroke="#7a4a1f" stroke-width="1.4" opacity="0.7"/>
+    <line x1="0" y1="-8" x2="12" y2="6" stroke="#7a4a1f" stroke-width="1.4" opacity="0.7"/>
+  </g>
+  <g transform="translate(60 200) rotate(-10) scale(0.5)">
+    <use href="#leaf" fill="#F2C879" opacity="0.85"/>
+  </g>
+
+  <!-- reeds along the bank -->
+  <g stroke="#F5F2E3" stroke-width="2.5" stroke-linecap="round" opacity="0.6">
+    <line x1="60" y1="345" x2="55" y2="300"/>
+    <line x1="72" y1="350" x2="70" y2="305"/>
+    <line x1="320" y1="335" x2="326" y2="295"/>
+    <line x1="335" y1="340" x2="338" y2="298"/>
+  </g>
+</svg>
