@@ -67,6 +67,7 @@ function closeMobileNav() {
         {"@type": "Question", "name": "What if I have no technical background?", "acceptedAnswer": {"@type": "Answer", "text": "That's most of the people we work with. Our training is built around the tasks you already do, not around how AI works under the hood."}},
         {"@type": "Question", "name": "We're a small business with no IT department. Is this relevant for us?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Most of what we cover works through tools you likely already have access to, like Microsoft 365. There's no infrastructure to set up and no IT team required."}},
         {"@type": "Question", "name": "What's the difference between Microsoft 365 Copilot and ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPT is a general-purpose AI tool from OpenAI. Microsoft 365 Copilot Chat is included with eligible Microsoft 365 work accounts, and when you sign in with that account it is covered by Microsoft's enterprise data protection. For schools and businesses already on Microsoft 365, it is usually the more practical starting point."}},
+        {"@type": "Question", "name": "Do you work on-site or remotely?", "acceptedAnswer": {"@type": "Answer", "text": "Remotely by default, with clients anywhere in Canada. On-site sessions in Eastern Ontario are available where there's a room where everyone can work at a computer together, since the training happens on each person's own machine."}},
         {"@type": "Question", "name": "What happens if the Needs Assessment shows AI isn't the answer?", "acceptedAnswer": {"@type": "Answer", "text": "We tell you. If the conversation points toward a workflow issue or process problem, we'll say so clearly. The goal is to help you find the right fit, not to sell a service that isn't one."}}
       ]
     }
@@ -261,6 +262,69 @@ html{scroll-padding-top:82px}
 .meet-photo-wrap { position:sticky; top:100px; }
 .meet-p { font-size:var(--text-md); color:var(--text-body); line-height:1.7; margin:0 0 16px; max-width:68ch; }
 @media (max-width: 820px) { .meet-grid { grid-template-columns:1fr; gap:28px; } .meet-photo-wrap { position:static; max-width:280px; } }
+
+/* How we work: stacking cards */
+.hw{padding:24px 0 40px}
+.hw-kicker{font-family:var(--font-wordmark);text-transform:uppercase;letter-spacing:0.12em;font-size:var(--text-lg);font-weight:600;color:var(--text-brand);margin:0 0 10px}
+.hw h2{font-family:var(--font-display);font-weight:600;color:var(--text-strong);font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;letter-spacing:-.015em;margin:0 0 12px}
+.hw-lead{color:var(--text-muted);font-size:var(--text-lg);max-width:56ch;margin:0}
+:root{--hw-top:100px;--hw-peek:68px}
+.hw-stack{position:relative;margin-top:28px}
+.hw-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.hw-card{position:absolute;left:0;right:0;top:calc(var(--hw-top) + var(--i) * var(--hw-peek));height:var(--h,440px);background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:20px;box-shadow:0 -6px 24px rgba(17,28,27,.06),0 18px 40px rgba(17,28,27,.12),0 4px 10px rgba(17,28,27,.06);overflow:hidden;display:flex;flex-direction:column;will-change:transform;transition:background-color .3s}
+.hw-card.under{background:#FBFAF5}
+.hw-head{flex:0 0 var(--hw-peek);display:flex;align-items:center;gap:14px;padding:0 32px;border-bottom:1px solid var(--border-subtle)}
+.hw-head b{flex:0 0 30px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--color-brand-soft);color:var(--color-brand);font-size:13px}
+.hw-head h3{font-family:var(--font-display);font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:600;color:var(--text-strong);line-height:1.2;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.hw-step{margin-left:auto;font-family:var(--font-wordmark);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);white-space:nowrap}
+.hw-body{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center;align-content:center;padding:24px 32px}
+.hw-body p{color:var(--text-muted);font-size:1.05rem;line-height:1.6;margin:0}
+.hw-mock{background:var(--surface-inset);border-radius:var(--radius-lg);padding:20px;font-size:.95rem}
+.hw-label{font-family:var(--font-wordmark);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin:0 0 10px!important}
+.hw-chip{display:inline-flex;align-items:center;gap:8px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:999px;padding:6px 14px;margin:0 6px 8px 0;font-size:.9rem;color:var(--text-body)}
+.hw-dot{width:7px;height:7px;border-radius:50%;background:var(--teal-600);animation:hwpulse 2s ease-in-out infinite}
+@keyframes hwpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+.hw-row{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--surface-card);border-radius:var(--radius-md);padding:10px 14px;margin-bottom:8px;border:1px solid var(--border-subtle)}
+.hw-tag{font-size:.75rem;font-weight:600;color:var(--color-brand);background:var(--color-brand-soft);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.hw-tag.plain{background:#F3E7C9;color:#7A5A12}
+.hw-quote{background:var(--surface-card);border-left:3px solid var(--teal-600);border-radius:var(--radius-md);padding:10px 14px;margin-bottom:8px;font-family:var(--font-display);font-style:italic;color:var(--text-strong)}
+.hw-cta{display:inline-flex;align-items:center;height:42px;padding:0 20px;border-radius:var(--radius-md);background:var(--color-brand);color:var(--text-on-brand);font-weight:600;font-size:.9rem;text-decoration:none;margin-top:16px}
+.hw-cta:hover{background:var(--teal-800)}
+@media (max-width:760px){
+  :root{--hw-top:84px;--hw-peek:50px}
+  .hw-head{padding:0 18px;gap:10px}
+  .hw-step{display:none}
+  .hw-body{grid-template-columns:1fr;gap:14px;padding:16px 18px;align-content:start}
+  .hw-body p{font-size:.95rem;line-height:1.5}
+  .hw-mock{padding:14px}
+  .hw-quote,.hw-row{padding:8px 12px;margin-bottom:6px}
+  .hw-tag{font-size:.7rem;padding:2px 8px}
+}
+@media (max-width:760px) and (max-height:760px){
+  :root{--hw-top:80px;--hw-peek:42px}
+  .hw-head h3{font-size:1.05rem}
+  .hw-body{padding:12px 16px;gap:10px}
+  .hw-body p{font-size:.88rem;line-height:1.45}
+  .hw-mock{padding:10px 12px}
+  .hw-chip{padding:4px 10px;margin:0 4px 6px 0;font-size:.8rem}
+  .hw-quote,.hw-row{padding:6px 10px;margin-bottom:5px;font-size:.85rem}
+  .hw-cta{height:36px;margin-top:10px}
+}
+@media (min-width:761px) and (max-height:720px){
+  :root{--hw-top:88px;--hw-peek:50px}
+  .hw-body{padding:14px 28px}
+  .hw-mock{padding:12px 14px}
+  .hw-row,.hw-quote{padding:6px 12px;margin-bottom:5px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hw-stage{position:static;height:auto;overflow:visible}
+  .hw-card{position:relative;top:auto;height:auto;margin-bottom:24px}
+  .hw-dot{animation:none}
+}
+/* Trust strip */
+.trust{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0}
+.trust span{display:inline-flex;align-items:center;gap:8px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:999px;padding:8px 16px;font-size:var(--text-sm);color:var(--text-body)}
+.trust svg.lucide{color:var(--teal-700);width:16px;height:16px}
 </style>
 </head>
 <body>
@@ -273,6 +337,7 @@ html{scroll-padding-top:82px}
       <span class="logo-wordmark">FICTIO CONSULTING</span>
     </a>
     <nav class="nav-items">
+      <a href="#how-we-work" class="navlink">How we work</a>
       <a href="#services" class="navlink">Services</a>
       <a href="#platforms" class="navlink">Platforms</a>
       <a href="#about" class="navlink">About</a>
@@ -282,6 +347,7 @@ html{scroll-padding-top:82px}
     <button class="ham-btn" onclick="toggleMobileNav()" aria-label="Open menu" id="ham-btn"><i data-lucide="menu" id="ham-icon"></i></button>
   </div>
   <nav class="mobile-nav" id="mobile-nav">
+    <a href="#how-we-work" onclick="closeMobileNav()">How we work</a>
     <a href="#services" onclick="closeMobileNav()">Services</a>
     <a href="#platforms" onclick="closeMobileNav()">Platforms</a>
     <a href="#about" onclick="closeMobileNav()">About</a>
@@ -299,8 +365,81 @@ html{scroll-padding-top:82px}
     <h1 style="font-family:var(--font-display);font-weight:600;font-size:clamp(3rem,6vw,4.75rem);line-height:1.04;letter-spacing:-0.025em;color:var(--text-strong);margin:18px 0 0;max-width:16ch">Practical AI fluency for small businesses and educators</h1>
     <p style="font-size:var(--text-xl);line-height:1.5;color:var(--text-muted);max-width:52ch;margin:24px 0 0">Fictio Consulting builds hands-on AI skills that fit the way people actually work. We start where you are and build from there, working across the tools you already have.</p>
     <div style="display:flex;gap:14px;margin-top:20px;flex-wrap:wrap">
-      <a href="mailto:hello@fictioconsulting.ca" class="btn-primary lg">Contact Us</a>
-      <a href="#services" class="btn-secondary">See our services</a>
+      <a href="https://outlook.office.com/bookwithme/user/71576d0866e04a41b15c3e62fdb038ab@fictioconsulting.ca/meetingtype/Nb4G7QrGpEKzgjlHNvqwOw2?anonymous&ismsaljsauthenabled&ep=mcard" target="_blank" rel="noopener" class="btn-primary lg" style="display:inline-flex;align-items:center;text-decoration:none">Book a free conversation</a>
+      <a href="#how-we-work" class="btn-secondary" style="display:inline-flex;align-items:center;text-decoration:none">See how we work</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="hw" id="how-we-work">
+  <div class="wrap">
+    <p class="hw-kicker">HOW WE WORK</p>
+    <h2>From a first conversation to a way of working that's yours</h2>
+    <p class="hw-lead">Here's how working together usually unfolds, one step at a time.</p>
+    <div class="hw-stack" id="hw-stack">
+     <div class="hw-stage">
+      <article class="hw-card" style="--i:0">
+        <header class="hw-head"><b>1</b><h3>A free 20-minute conversation</h3><span class="hw-step">Start Here</span></header>
+        <div class="hw-body">
+          <div>
+            <p>Bring a real problem. We talk through what you're trying to do and where things feel slow, and you leave with clear next steps, ones you can take on yourself or that we can work through together.</p>
+            <a class="hw-cta" href="https://outlook.office.com/bookwithme/user/71576d0866e04a41b15c3e62fdb038ab@fictioconsulting.ca/meetingtype/Nb4G7QrGpEKzgjlHNvqwOw2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Book a free conversation</a>
+          </div>
+          <div class="hw-mock">
+            <p class="hw-label">Microsoft Teams · 20 minutes</p>
+            <span class="hw-chip"><span class="hw-dot"></span>Open times every week</span>
+            <span class="hw-chip">No preparation needed</span>
+            <span class="hw-chip">No obligation</span>
+          </div>
+        </div>
+      </article>
+      <article class="hw-card" style="--i:1">
+        <header class="hw-head"><b>2</b><h3>Your Needs Assessment</h3><span class="hw-step">Your Needs</span></header>
+        <div class="hw-body">
+          <div>
+            <p>The Needs Assessment starts with an hour together on how your work moves: where information comes from, where it gets stuck and what your team already has access to. We listen for what's slowing you down and begin shaping next steps with you.</p>
+          </div>
+          <div class="hw-mock">
+            <p class="hw-label">What we often hear (examples)</p>
+            <div class="hw-quote">Work orders don't come back from the field, so we end up chasing them by phone.</div>
+            <div class="hw-quote">Every September, every student name gets typed in by hand, in more than one tool.</div>
+            <div class="hw-quote">We want one tool, not another one to manage.</div>
+          </div>
+        </div>
+      </article>
+      <article class="hw-card" style="--i:2">
+        <header class="hw-head"><b>3</b><h3>Your opportunity brief</h3><span class="hw-step">The Outcome</span></header>
+        <div class="hw-body">
+          <div>
+            <p>Within a week, you receive an opportunity brief showing where AI may fit, workflow by workflow, with an honest column for what doesn't need AI at all. We start with the tools you already have, and suggest a paid tool only when it's truly needed.</p>
+          </div>
+          <div class="hw-mock">
+            <p class="hw-label">Where AI may fit (example)</p>
+            <div class="hw-row"><span>Meeting minutes</span><span class="hw-tag">Copilot Chat</span></div>
+            <div class="hw-row"><span>Monthly report</span><span class="hw-tag">Copilot + template</span></div>
+            <div class="hw-row"><span>Grade item analysis</span><span class="hw-tag plain">One Excel formula</span></div>
+            <div class="hw-row"><span>Client onboarding</span><span class="hw-tag plain">Process fix first</span></div>
+          </div>
+        </div>
+      </article>
+      <article class="hw-card" style="--i:3">
+        <header class="hw-head"><b>4</b><h3>What comes next</h3><span class="hw-step">Your Choice</span></header>
+        <div class="hw-body">
+          <div>
+            <p>Your opportunity brief recommends where to begin. Some teams take it forward on their own, and others continue with us on the next step. Whichever you choose, we're glad to keep supporting your team as its practice grows.</p>
+          </div>
+          <div class="hw-mock">
+            <p class="hw-label">Where teams often go next</p>
+            <span class="hw-chip">Take it forward as a team</span>
+            <span class="hw-chip">AI Literacy Training</span>
+            <span class="hw-chip">Copilot or Claude onboarding</span>
+            <span class="hw-chip">Learning Loops</span>
+            <span class="hw-chip">Ongoing AI Advisory</span>
+          </div>
+        </div>
+      </article>
+     </div>
     </div>
   </div>
 </section>
@@ -308,7 +447,8 @@ html{scroll-padding-top:82px}
 <!-- SERVICES -->
 <section id="services" style="padding:24px 0 64px">
   <div class="wrap">
-    <p style="font-family:var(--font-wordmark);text-transform:uppercase;letter-spacing:0.12em;font-size:var(--text-lg);font-weight:600;color:var(--text-brand);margin:0 0 36px">WHAT WE DO</p>
+    <p style="font-family:var(--font-wordmark);text-transform:uppercase;letter-spacing:0.12em;font-size:var(--text-lg);font-weight:600;color:var(--text-brand);margin:0 0 12px">WHAT WE DO</p>
+    <p style="font-size:var(--text-xl);color:var(--text-muted);max-width:60ch;margin:0 0 32px;line-height:1.6">Most clients start with the Needs Assessment. Every service also stands on its own, so you can come in wherever it makes sense for you.</p>
     <div class="services-grid">
 
       <!-- Row 1 -->
@@ -317,16 +457,15 @@ html{scroll-padding-top:82px}
           <span class="picon"><i data-lucide="compass"></i></span>
           <span class="svc-titlewrap"><span class="svc-title">Needs Assessment</span></span>
         </div>
-        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">We find the right fit for the problem, which is not always an AI one.</p>
+        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">An hour on how your work moves, and an AI Opportunity Brief within a week.</p>
         <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
       </button>
-
-      <button class="pcard" onclick="toggleDetail('advisory',1)" id="card-advisory">
+      <button class="pcard" onclick="toggleDetail('literacy',1)" id="card-literacy">
         <div class="pcard-header">
-          <span class="picon"><i data-lucide="scale"></i></span>
-          <span class="svc-titlewrap"><span class="svc-title">AI Tool Selection Advisory</span></span>
+          <span class="picon"><i data-lucide="graduation-cap"></i></span>
+          <span class="svc-titlewrap"><span class="svc-title">AI Literacy Training</span></span>
         </div>
-        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Not sure which AI tool is right for you? We compare options against your reality.</p>
+        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Hands-on workshops that start with the AI tools you already have and build around the way you work.</p>
         <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
       </button>
 
@@ -350,21 +489,20 @@ html{scroll-padding-top:82px}
       </div>
 
       <!-- Row 2 -->
-      <button class="pcard" onclick="toggleDetail('literacy',2)" id="card-literacy">
-        <div class="pcard-header">
-          <span class="picon"><i data-lucide="graduation-cap"></i></span>
-          <span class="svc-titlewrap"><span class="svc-title">AI Literacy Training</span></span>
-        </div>
-        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">We start with the AI tools you already have, then build practical skills around the way you actually work.</p>
-        <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
-      </button>
-
       <button class="pcard" onclick="toggleDetail('onboarding',2)" id="card-onboarding">
         <div class="pcard-header">
           <span class="picon"><i data-lucide="rocket"></i></span>
           <span class="svc-titlewrap"><span class="svc-title">AI Platform Onboarding</span></span>
         </div>
-        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">A hands-on introduction to Microsoft 365 Copilot or Claude for anyone just getting started, solo or with a team.</p>
+        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Your team has chosen Microsoft 365 Copilot or Claude. We help everyone put it to work on real tasks.</p>
+        <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
+      </button>
+      <button class="pcard" onclick="toggleDetail('loop',2)" id="card-loop">
+        <div class="pcard-header">
+          <span class="picon"><i data-lucide="refresh-cw"></i></span>
+          <span class="svc-titlewrap"><span class="svc-title">Learning Loop</span></span>
+        </div>
+        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Learn, apply, share and refine, with your own champion keeping practice going between sessions.</p>
         <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
       </button>
 
@@ -376,6 +514,43 @@ html{scroll-padding-top:82px}
             <p class="detail-long" id="p2-long"></p>
             <p class="gets-label">What you get</p>
             <div id="p2-gets"></div>
+          </div>
+          <aside class="detail-aside" onclick="event.stopPropagation()">
+            <div class="detail-aside-eyebrow">Interested?</div>
+            <div class="detail-aside-title">What's right for you?</div>
+            <div class="detail-aside-sub">Tell us about your situation and we'll tailor this to your context and budget.</div>
+            <a href="https://outlook.office.com/bookwithme/user/71576d0866e04a41b15c3e62fdb038ab@fictioconsulting.ca/meetingtype/Nb4G7QrGpEKzgjlHNvqwOw2?anonymous&ismsaljsauthenabled&ep=mcard" target="_blank" class="btn-aside-primary">Book a free conversation</a>
+            <a href="mailto:hello@fictioconsulting.ca" class="btn-aside-sec">Let's talk</a>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <button class="pcard" onclick="toggleDetail('responsible',3)" id="card-responsible">
+        <div class="pcard-header">
+          <span class="picon"><i data-lucide="shield-check"></i></span>
+          <span class="svc-titlewrap"><span class="svc-title">Responsible AI Use</span></span>
+        </div>
+        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Plain-language guardrails: which tools, what information can go where, and how to check the output.</p>
+        <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
+      </button>
+      <button class="pcard" onclick="toggleDetail('ongoing',3)" id="card-ongoing">
+        <div class="pcard-header">
+          <span class="picon"><i data-lucide="messages-square"></i></span>
+          <span class="svc-titlewrap"><span class="svc-title">Ongoing AI Advisory</span></span>
+        </div>
+        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">A standing line to a practitioner as your tools change and your team's practice grows.</p>
+        <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
+      </button>
+
+      <div class="detail-panel" id="panel-3" onclick="if(openSvc)toggleDetail(openSvc,SERVICES[openSvc].panel)">
+        <div class="detail-inner">
+          <div>
+            <div class="detail-header"><span class="detail-icon" id="p3-icon"></span><span class="detail-kicker" id="p3-kicker"></span></div>
+            <h2 class="detail-title" id="p3-title"></h2>
+            <p class="detail-long" id="p3-long"></p>
+            <p class="gets-label">What you get</p>
+            <div id="p3-gets"></div>
           </div>
           <aside class="detail-aside" onclick="event.stopPropagation()">
             <div class="detail-aside-eyebrow">Interested?</div>
@@ -413,6 +588,20 @@ html{scroll-padding-top:82px}
             <div class="flip-back" id="edu-back">
               <div class="flip-back-inner">
                 <p>You may already have access to Microsoft 365 Copilot Chat through your school or district. A lot of educators do and never realize it, and many who know it is there are not sure how to actually use it. If that sounds like you, we can help you make the most of what you already have.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flip" id="smb-flip" onclick="toggleSmb()" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleSmb()">
+          <div class="flip-card">
+            <div class="flip-front">
+              <span style="flex:0 0 auto;color:var(--teal-700);display:flex"><i data-lucide="store"></i></span>
+              <span class="flip-h">Running a small business?</span>
+              <i data-lucide="chevron-down" class="fchev"></i>
+            </div>
+            <div class="flip-back" id="smb-back">
+              <div class="flip-back-inner">
+                <p>If your team signs in to Microsoft 365 with work accounts, Copilot Chat is likely already included in what you pay for. You don't need an IT department to start using it well. We begin with what you already have and help you decide whether a paid licence is worth it for your team.</p>
               </div>
             </div>
           </div>
@@ -459,6 +648,13 @@ html{scroll-padding-top:82px}
       </div>
     </div>
 
+    <div class="trust" aria-label="Credentials">
+      <span><i data-lucide="shield-check"></i>Insured: technology E&amp;O and general liability</span>
+      <span><i data-lucide="graduation-cap"></i>Master of Education</span>
+      <span><i data-lucide="badge-check"></i>Anthropic Academy and Microsoft Learn AI certifications</span>
+      <span><i data-lucide="users"></i>More than twenty years teaching adults</span>
+    </div>
+
     <!-- Get In Touch — collapsible teal -->
     <div style="background:var(--surface-brand);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;margin-top:22px">
       <div style="padding:28px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;cursor:pointer" onclick="toggleContact()">
@@ -502,6 +698,10 @@ html{scroll-padding-top:82px}
       <details class="faq" name="faq">
         <summary><span class="faq-q">What's the difference between Microsoft 365 Copilot and ChatGPT?</span><i data-lucide="chevron-down" class="faq-chev"></i></summary>
         <div class="faq-body"><p>ChatGPT is a general-purpose AI tool made by OpenAI, available to anyone with an account. Microsoft 365 Copilot Chat is included with eligible Microsoft 365 work accounts, and when you sign in with that account it is covered by Microsoft's enterprise data protection. For most schools and businesses already on Microsoft 365, Copilot is the more practical starting point, and many already have access without realizing it.</p></div>
+      </details>
+      <details class="faq" name="faq">
+        <summary><span class="faq-q">Do you work on-site or remotely?</span><i data-lucide="chevron-down" class="faq-chev"></i></summary>
+        <div class="faq-body"><p>Remotely by default, with clients anywhere in Canada. On-site sessions in Eastern Ontario are available where there's a room where everyone can work at a computer together, since the training happens on each person's own machine.</p></div>
       </details>
       <details class="faq" name="faq">
         <summary><span class="faq-q">What happens if the Needs Assessment shows AI isn't the answer?</span><i data-lucide="chevron-down" class="faq-chev"></i></summary>
@@ -556,43 +756,63 @@ html{scroll-padding-top:82px}
 <script>
 const SERVICES = {
   readiness: {
-    icon: 'compass', kicker: 'Assessment · Honest Fit', panel: 1,
+    icon: 'compass', kicker: 'Assessment · AI Opportunity Brief', panel: 1,
     title: 'Needs Assessment',
-    long: "We start with the problem, not the technology. Together we figure out what is actually getting in your way, and what would genuinely help. Sometimes that is AI, and sometimes the right answer is a workflow change, some basic automation, or simply a clearer process. The point is honesty upfront: this is about finding the right fit, not selling you AI training.",
+    long: "We start with the problem, not the technology. In an hour together we look at how your work moves: where information comes from, where it gets stuck and what you already have access to. Within a week you receive an AI Opportunity Brief showing where AI may fit, workflow by workflow, which tools suit your situation, and where the honest answer is a process change rather than AI. For larger teams and institutions, the same approach extends to several interviews and a roadmap.",
     gets: [
-      { icon: 'search',  title: 'A clear read on the real problem',    desc: 'We look at how you actually work before recommending anything.' },
-      { icon: 'target',  title: 'The right fit, even if it is not AI', desc: 'A workflow change, basic automation, or a clearer process when that is the honest answer.' },
-      { icon: 'compass', title: 'Straight guidance on scope',           desc: 'Where we can help directly, and where a challenge calls for someone else, said plainly.' },
-    ]
-  },
-  advisory: {
-    icon: 'scale', kicker: 'Comparison · Recommendation', panel: 1,
-    title: 'AI Tool Selection Advisory',
-    long: 'Not sure which AI tool is right for you? We compare options against your actual environment, budget, and workflows, and give you a clear recommendation you can act on with confidence.',
-    gets: [
-      { icon: 'git-compare',  title: 'A grounded comparison',    desc: 'Options weighed against your real environment, budget, and workflows.' },
-      { icon: 'badge-check',  title: 'A clear recommendation',   desc: 'One confident call, not a 40-tab spreadsheet to decode yourself.' },
-      { icon: 'shield-check', title: 'Decide with confidence',   desc: 'Know why a tool fits before you commit time or money to it.' },
+      { icon: 'file-text', title: 'Your AI Opportunity Brief',          desc: 'A written brief within a week, yours to keep and to share.' },
+      { icon: 'wrench',    title: 'Tool guidance included',             desc: 'We start with what you already have, and suggest a paid tool only when it is truly needed.' },
+      { icon: 'target',    title: 'The right fit, even if it is not AI', desc: 'A workflow change, a simple formula, or a clearer process when that is the honest answer.' },
     ]
   },
   literacy: {
-    icon: 'graduation-cap', kicker: 'Hands-on training', panel: 2,
+    icon: 'graduation-cap', kicker: 'Workshops · Hands-on', panel: 1,
     title: 'AI Literacy Training',
-    long: 'We start with the AI tools you already have access to, building hands-on skills around your actual workflows. No new subscriptions required, no abstract theory, just practical capability people can put to work the same day.',
+    long: "Half-day or full-day workshops built around your team's real work, not generic slides. We start with the AI tools you already have and cover the judgement that goes with them: what to put in, how to check what comes out, and when a person still needs to decide. Online anywhere in Canada, or on-site in Eastern Ontario.",
     gets: [
       { icon: 'users',        title: 'Training on your actual tools', desc: 'We start with what you already have access to, not what we wish you had.' },
-      { icon: 'briefcase',    title: 'Built around your work',        desc: 'Sessions run on your own documents, tasks, and decisions.' },
-      { icon: 'check-circle', title: 'Confidence on the job',         desc: 'People leave knowing how to use AI in practice, not just in theory.' },
+      { icon: 'briefcase',    title: 'Built around your work',        desc: 'Examples drawn from your own documents, tasks and decisions.' },
+      { icon: 'check-circle', title: 'Materials to keep',             desc: 'Everything from the session stays with your team afterwards.' },
     ]
   },
   onboarding: {
-    icon: 'rocket', kicker: 'Copilot or Claude · Getting Started', panel: 2,
+    icon: 'rocket', kicker: 'Copilot or Claude · Getting started', panel: 2,
     title: 'AI Platform Onboarding',
-    long: "A hands-on introduction to Microsoft 365 Copilot or Claude for anyone just getting started, working solo or with a team. We cover the basics, show how the tool fits into your workflow, and make sure you and your team are not just learning something, but ready to use it.",
+    long: "For a team that has chosen its tool. We review your licences and use cases, run two or three sessions on your real work in Microsoft 365 Copilot or Claude, and leave you with a written adoption guide, so people are not just aware of the tool but ready to use it.",
     gets: [
-      { icon: 'book-open',    title: 'The basics, hands-on',     desc: "A guided first run through Microsoft 365 Copilot or Claude, at your own pace." },
-      { icon: 'workflow',     title: 'Fit to your workflows',     desc: 'We show how the tool slots into the tasks you already do day to day.' },
-      { icon: 'check-circle', title: 'Ready, not just aware',     desc: 'You and your team leave able to use the tool on real work, not just nodding along to a demo.' },
+      { icon: 'clipboard-check', title: 'Licence and use-case review', desc: 'What you have, what it can reach, and where it fits your work.' },
+      { icon: 'workflow',        title: 'Sessions on your real work',  desc: 'Two or three hands-on sessions in the tool you chose.' },
+      { icon: 'book-open',       title: 'A written adoption guide',    desc: 'A reference your team can return to after we finish.' },
+    ]
+  },
+  loop: {
+    icon: 'refresh-cw', kicker: 'Learn · Apply · Share · Refine', panel: 2,
+    title: 'Learning Loop',
+    long: "One session rarely changes how a team works. The Learning Loop runs in four stages: Learn, on your own tasks; Apply, in your real week; Share, a conversation about what worked, led by your own internal champion; and Refine, where we come back to tighten what works. Your champion runs the Share session on purpose, so progress keeps going without depending on us.",
+    gets: [
+      { icon: 'repeat',        title: 'Four stages, one cycle', desc: 'Practice that carries from the session into the work week.' },
+      { icon: 'package',       title: 'The Loop Kit',           desc: 'A discussion guide, a shared capture template and a one-page guide for your champion.' },
+      { icon: 'trending-up',   title: 'A habit, not an event',  desc: 'Your team keeps building on it after the cycle ends.' },
+    ]
+  },
+  responsible: {
+    icon: 'shield-check', kicker: 'Policy · Guardrails', panel: 3,
+    title: 'Responsible AI Use',
+    long: "Many teams are already using AI, often without shared rules. We help you put plain-language guardrails in place: an AI use policy built from your AI Opportunity Brief, or a review of what staff are actually using and what should change. It covers approved tools, what information can go into which tool, checking AI output, disclosure, and AI-specific scams. This is practical guidance, not legal advice.",
+    gets: [
+      { icon: 'file-check', title: 'A plain-language policy',   desc: 'Approved tools, information rules and permitted uses, with a one-page staff summary.' },
+      { icon: 'eye',        title: 'A clear view of current use', desc: 'What staff are using now, and what should be kept, changed or stopped.' },
+      { icon: 'building-2', title: 'Specific to your organization', desc: 'Every recommendation tied to your own tools and work.' },
+    ]
+  },
+  ongoing: {
+    icon: 'messages-square', kicker: 'Monthly · Ongoing', panel: 3,
+    title: 'Ongoing AI Advisory',
+    long: "AI tools change month to month, and new questions come up as your team's practice grows. Ongoing AI Advisory gives you a monthly session, answers between sessions, a look at new tools as they appear, and a quarterly check on where you're headed.",
+    gets: [
+      { icon: 'calendar',       title: 'A monthly session',      desc: 'Time set aside for your team\'s questions and next steps.' },
+      { icon: 'message-circle', title: 'Questions between sessions', desc: 'Ask when something comes up, without waiting for the next meeting.' },
+      { icon: 'map',            title: 'A quarterly check-in',   desc: 'A look at what is working and where to go next.' },
     ]
   }
 };
@@ -651,6 +871,27 @@ function toggleEdu() {
   }
 }
 
+let smbFlipped = false;
+function toggleSmb() {
+  const flip = document.getElementById('smb-flip');
+  const back = document.getElementById('smb-back');
+  smbFlipped = !smbFlipped;
+  if (smbFlipped) {
+    flip.classList.add('is-flipped');
+    back.style.height = back.scrollHeight + 'px';
+    back.addEventListener('transitionend', function done(e) {
+      if (e.propertyName !== 'height') return;
+      back.style.height = 'auto';
+      back.removeEventListener('transitionend', done);
+    });
+  } else {
+    flip.classList.remove('is-flipped');
+    back.style.height = back.scrollHeight + 'px';
+    void back.offsetWidth;
+    back.style.height = '0px';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
 </script>
 <script>
@@ -675,5 +916,49 @@ function handleContact(e) {
 }
 </script>
 
+
+<script>
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const stack = document.getElementById('hw-stack');
+  if (!stack) return;
+  const cards = [...stack.querySelectorAll('.hw-card')];
+  const n = cards.length;
+  let vh, top, peek, travel, hold, ticking = false;
+  function layout(){
+    vh = innerHeight;
+    const cs = getComputedStyle(document.documentElement);
+    top = parseFloat(cs.getPropertyValue('--hw-top'));
+    peek = parseFloat(cs.getPropertyValue('--hw-peek'));
+    cards.forEach(c => c.style.setProperty('--h', 'auto'));
+    const natural = Math.max(...cards.map(c => c.offsetHeight));
+    const room = vh - top - (n - 1) * peek - 20;
+    const h = Math.min(natural + 4, room);
+    travel = Math.round(vh * 0.7);
+    hold = Math.round(vh * 0.6);
+    cards.forEach(c => c.style.setProperty('--h', h + 'px'));
+    stack.style.height = (vh + (n - 1) * travel + hold) + 'px';
+    update();
+  }
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  function update(){
+    ticking = false;
+    const scrolled = Math.max(0, -stack.getBoundingClientRect().top);
+    cards.forEach((card, i) => {
+      if (i > 0){
+        const t = Math.min(1, Math.max(0, (scrolled - (i - 1) * travel) / travel));
+        const start = vh - (top + i * peek) + 24;
+        card.style.transform = `translate3d(0,${((1 - ease(t)) * start).toFixed(1)}px,0)`;
+      }
+      const covered = cards[i + 1] && (scrolled - i * travel) > travel * 0.5;
+      card.classList.toggle('under', !!covered);
+    });
+  }
+  addEventListener('scroll', () => { if (!ticking){ ticking = true; requestAnimationFrame(update);} }, {passive:true});
+  addEventListener('resize', layout);
+  layout();
+  if (document.fonts) document.fonts.ready.then(layout);
+})();
+</script>
 </body>
 </html>
