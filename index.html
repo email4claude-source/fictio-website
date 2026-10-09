@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=Cinzel:wght@500;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@500;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.js"></script>
 <script>
 function toggleMobileNav() {
@@ -325,6 +325,260 @@ html{scroll-padding-top:82px}
 .trust{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0}
 .trust span{display:inline-flex;align-items:center;gap:8px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:999px;padding:8px 16px;font-size:var(--text-sm);color:var(--text-body)}
 .trust svg.lucide{color:var(--teal-700);width:16px;height:16px}
+
+/* ===== Needs Assessment: sample AI Opportunity Brief (scoped under .nb) ===== */
+.nb{--paper:#FFFEFA;--amber:#9A6B1F;--amber-soft:#F6EBD3;--shadow-paper:0 1px 0 rgba(17,28,27,.04),0 18px 40px rgba(17,28,27,.12),0 4px 10px rgba(17,28,27,.06);--gutter:clamp(16px,4vw,48px);margin:8px 0 72px}
+.nb *{box-sizing:border-box}
+.nb :focus-visible{outline:2px solid var(--teal-600);outline-offset:3px;border-radius:6px}
+.nb .b-intro{padding-block:0 32px}
+.services-more{font-family:var(--font-wordmark);text-transform:uppercase;letter-spacing:.12em;font-size:var(--text-sm);font-weight:600;color:var(--text-brand);margin:0 0 20px}
+.pcard.span-2{grid-column:1/-1}
+.nb h1,.nb h2,.nb h3,.nb h4{font-family:var(--font-display);color:var(--text-strong);text-wrap:balance;margin:0;font-weight:600;line-height:1.15}
+.nb p{margin:0}
+.nb button{font:inherit;cursor:pointer;color:inherit}
+.nb .nb-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid transparent;transition:transform .2s var(--ease-out),background .2s}
+.nb .nb-btn-primary{background:var(--color-brand);color:var(--text-on-brand)}
+.nb .nb-btn-primary:hover{background:var(--teal-800);transform:translateY(-1px)}
+.nb .nb-btn-ghost{border-color:var(--border-default);color:var(--color-brand);background:transparent}
+.nb .nb-btn-ghost:hover{background:var(--color-brand-tint)}
+.nb .nb-btn svg{width:16px;height:16px}
+.nb .proto-head{padding-block:40px 28px;border-bottom:1px solid var(--border-subtle)}
+.nb .proto-head h1{font-size:clamp(1.8rem,4vw,2.6rem);margin-top:8px}
+.nb .proto-head p{max-width:70ch;color:var(--text-muted);margin-top:12px}
+.nb .opt-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.nb .opt-nav a{display:inline-flex;gap:10px;align-items:center;text-decoration:none;color:var(--text-strong);background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:999px;padding:8px 16px 8px 8px;font-weight:600;font-size:.92rem}
+.nb .opt-nav a b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--color-brand-soft);color:var(--color-brand);font-size:.8rem}
+.nb .opt-nav a:hover{border-color:var(--teal-200)}
+.nb .opt-label{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding-block:56px 12px}
+.nb .opt-label .tag{font-family:var(--font-wordmark);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);background:var(--amber-soft);border-radius:999px;padding:4px 12px}
+.nb .opt-label h2{font-size:1.4rem}
+.nb .opt-label span.note{color:var(--text-muted);font-size:.95rem;flex-basis:100%}
+.nb .paper{background:var(--paper);border-radius:6px;box-shadow:var(--shadow-paper);border:1px solid rgba(17,28,27,.06);color:var(--text-body)}
+.nb .lh{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:2px solid var(--color-brand);margin-bottom:14px}
+.nb .lh .mark{font-family:var(--font-wordmark);font-weight:600;color:var(--color-brand);letter-spacing:.08em;font-size:.92rem;display:flex;align-items:center;gap:8px}
+.nb .lh .mark i{display:grid;place-items:center;width:24px;height:24px;border-radius:5px;background:var(--color-brand);color:var(--text-on-brand);font-style:normal;font-size:.68rem;letter-spacing:0}
+.nb .lh .ttl{font-family:var(--font-wordmark);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);text-align:right}
+.nb .sample{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);border:1px solid var(--amber);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+.nb .sec-no{font-family:var(--font-wordmark);font-size:.68rem;letter-spacing:.14em;color:var(--text-faint);text-transform:uppercase}
+.nb .bp h3{font-family:var(--font-display);font-size:1.3em;margin:2px 0 10px;text-transform:uppercase;letter-spacing:.04em;color:var(--color-brand);font-weight:600}
+.nb .bp p{margin:0 0 10px}
+.nb .bp .muted{color:var(--text-muted)}
+.nb .bp .scope{font-style:italic;color:var(--text-muted);font-size:.92em;border-bottom:1px solid var(--sand-200);padding-bottom:8px;margin-bottom:12px}
+.nb .bp .quote{font-family:var(--font-display);font-style:italic;color:var(--text-strong);border-left:2px solid var(--teal-200);padding-left:12px;margin:0 0 10px}
+.nb .bp ul{margin:0 0 10px;padding-left:18px}
+.nb .bp li{margin-bottom:4px}
+.nb .bp table{width:100%;border-collapse:collapse;font-size:.92em;margin-bottom:10px}
+.nb .bp th{text-align:left;font-size:.78em;letter-spacing:.06em;text-transform:uppercase;color:var(--color-brand);border-bottom:1.5px solid var(--color-brand);padding:5px 8px 5px 0}
+.nb .bp td{padding:6px 8px 6px 0;border-bottom:1px solid var(--sand-200);vertical-align:top}
+.nb .bp td.fit{width:34px;text-align:center;font-weight:700;font-size:1.05em}
+.nb .bp td.step{white-space:nowrap;font-weight:700;color:var(--color-brand);width:58px}
+.nb .fit-y{color:var(--teal-600)}
+.nb .fit-q{color:var(--amber)}
+.nb .fit-n{color:var(--text-faint)}
+.nb .legend{background:var(--surface-page);border:1px solid var(--sand-200);border-radius:4px;padding:8px 12px;font-size:.86em;display:grid;gap:2px;width:max-content;max-width:100%;margin-bottom:10px}
+.nb .prompt{background:var(--color-brand-tint);border:1px solid var(--teal-200);border-radius:6px;padding:10px 12px;font-size:.9em}
+.nb .prompt b{display:block;font-size:.78em;letter-spacing:.06em;text-transform:uppercase;color:var(--color-brand);margin-bottom:4px}
+.nb .ov{background:var(--color-brand-tint);border-radius:6px;padding:12px 14px;margin-bottom:12px}
+.nb .toc{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.nb .toc li{display:flex;gap:8px;align-items:baseline;text-transform:uppercase;letter-spacing:.04em;font-size:.88em}
+.nb .toc li b{color:var(--color-brand);width:14px}
+.nb .toc li span.d{flex:1;border-bottom:1px dotted var(--teal-200);transform:translateY(-3px)}
+.nb .toc li em{font-style:normal;color:var(--text-faint);font-variant-numeric:tabular-nums}
+.nb .veil{display:grid;gap:7px;margin:4px 0 10px;-webkit-mask-image:linear-gradient(#000 20%,transparent 95%);mask-image:linear-gradient(#000 20%,transparent 95%)}
+.nb .veil i{display:block;height:9px;border-radius:5px;background:var(--sand-200)}
+.nb .veil i[style="width:0%"]{height:4px;background:none}
+.nb .veil-t span{display:grid;grid-template-columns:1.1fr .4fr 1.6fr;gap:12px;padding:6px 0;border-bottom:1px solid var(--sand-200)}
+.nb .veil-t span i{height:8px}
+.nb .cont{display:flex;gap:8px;align-items:flex-start;font-size:.86em;color:var(--color-brand);background:var(--color-brand-tint);border:1px dashed var(--teal-200);border-radius:6px;padding:8px 10px;margin:0}
+.nb .cont svg{width:15px;height:15px;flex:0 0 15px;margin-top:2px}
+.nb .end-cta{display:grid;gap:10px;justify-items:start;margin-top:20px;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .5s var(--ease-out),transform .6s var(--ease-out)}
+.nb .end-cta.show{opacity:1;transform:none;pointer-events:auto}
+.nb .end-cta p{color:var(--text-muted);font-size:.95rem;max-width:34ch}
+.nb .end-cta.static{opacity:1;transform:none;pointer-events:auto}
+.nb .end-cta.m-only{display:none}
+.nb .site-foot{background:var(--teal-800);color:var(--text-on-brand);padding-block:36px 40px;margin-top:24px}
+.nb .site-foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+.nb .site-foot .brand{font-family:var(--font-wordmark);letter-spacing:.1em;font-size:1.1rem}
+.nb .site-foot p{color:var(--text-on-brand-muted);font-size:.92rem;margin-top:6px}
+.nb .site-foot small{display:block;color:var(--text-on-brand-muted);font-size:.78rem;margin-top:18px}
+@media (max-width:760px){.nb .rail-wrap .end-cta{display:none}
+.nb .end-cta.m-only{display:grid}
+}
+.nb .pfoot{display:flex;justify-content:space-between;gap:10px;font-size:.72em;color:var(--text-faint);border-top:1px solid var(--sand-200);padding-top:8px;margin-top:14px}
+.nb .band{background:var(--surface-card);border-block:1px solid var(--border-subtle);padding-block:clamp(40px,6vw,80px);overflow:hidden;position:relative}
+.nb .band::before{content:"";position:absolute;inset:auto -10% -40% 45%;height:120%;background:radial-gradient(closest-side,var(--color-brand-tint),transparent);pointer-events:none}
+.nb .a-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,4vw,48px);position:relative;max-width:900px;margin-inline:auto}
+.nb .a-grid .deck{justify-self:center}
+.nb .svc-copy h2{font-size:clamp(2rem,4.2vw,3.1rem);margin:10px 0 16px}
+.nb .svc-copy .lede{font-size:1.08rem;color:var(--text-muted);max-width:56ch}
+.nb .gets{list-style:none;padding:0;margin:26px 0;display:grid;gap:14px}
+.nb .gets li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+.nb .gets .ic{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--color-brand-soft);color:var(--color-brand)}
+.nb .gets .ic svg{width:18px;height:18px}
+.nb .gets b{display:block;color:var(--text-strong)}
+.nb .gets span{color:var(--text-muted);font-size:.93rem}
+.nb .ctas{display:flex;flex-wrap:wrap;gap:10px}
+.nb .nb-flip{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:24px;align-items:start}
+.nb .deck{position:relative;width:100%;max-width:600px;justify-self:end;perspective:1800px;margin-right:36px;margin-bottom:36px}
+.nb .deck .page{position:absolute;top:0;left:0;right:0;padding:clamp(18px,2.6vw,32px);font-size:clamp(.8rem,1vw,.88rem);transform-origin:left center;transition:transform .75s var(--ease-out),opacity .55s,filter .5s;display:flex;flex-direction:column;cursor:pointer}
+.nb .deck .page .body{flex:1}
+.nb .rail-wrap{position:sticky;top:20px}
+.nb .rail{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+.nb .rail button{width:100%;text-align:left;display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:center;background:none;border:0;border-radius:8px;padding:7px 8px;color:var(--text-muted);font-size:.86rem;line-height:1.25}
+.nb .rail button b{font-family:var(--font-wordmark);font-size:.72rem;color:var(--text-faint)}
+.nb .rail button:hover{background:var(--surface-page)}
+.nb .rail button[aria-current="true"]{background:var(--color-brand-soft);color:var(--text-strong);font-weight:600}
+.nb .rail button[aria-current="true"] b{color:var(--color-brand)}
+.nb .deck-wrap{position:relative;min-width:0}
+.nb .tap-hint{position:absolute;left:50%;bottom:22%;transform:translateX(-50%);z-index:300;display:inline-flex;align-items:center;gap:10px;background:var(--text-strong);color:var(--surface-page);border:0;border-radius:999px;padding:12px 20px 12px 14px;font-weight:600;font-size:.95rem;box-shadow:0 10px 30px rgba(17,28,27,.3);white-space:nowrap;transition:opacity .4s,transform .4s var(--ease-out)}
+.nb .tap-hint svg{width:22px;height:22px;animation:tap 1.6s ease-in-out infinite}
+
+@keyframes tap{0%,100%{transform:translateY(0) scale(1)}40%{transform:translateY(3px) scale(.86)}60%{transform:translateY(3px) scale(.86)}}
+.nb .tap-hint.gone{opacity:0;transform:translateX(-50%) translateY(10px);pointer-events:none}
+.nb .auto-note{display:block;color:var(--text-faint);font-size:.78rem;margin-top:8px}
+.nb .b-phone{display:none}
+.nb .b-phone .deck .page{font-size:.74rem}
+.nb .b-phone .b-cap{min-height:10.5em}
+.nb .b-phone .end-cta{margin-top:16px}
+.nb .b-strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 18px;margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter);scrollbar-width:none}
+.nb .b-strip::-webkit-scrollbar{display:none}
+.nb .b-card{flex:0 0 86%;scroll-snap-align:center;display:grid;gap:10px;align-content:start;min-width:0}
+.nb .b-card h3{font-size:1.55rem}
+.nb .b-card>p{color:var(--text-muted);font-size:.98rem}
+.nb .b-card .mini{position:relative;height:250px;overflow:hidden;padding:14px 16px;font-size:.72rem;margin-top:4px}
+.nb .b-card .mini::after{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(transparent,var(--paper))}
+.nb .b-card .mini .lh{margin-bottom:8px;padding-bottom:6px}
+.nb .b-strip-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.nb .dots{display:flex;gap:6px}
+.nb .dots i{width:8px;height:8px;border-radius:50%;background:var(--teal-200);transition:all .3s}
+.nb .dots i.on{width:22px;border-radius:4px;background:var(--color-brand)}
+.nb .swipe-hint{display:inline-flex;align-items:center;gap:6px;color:var(--text-faint);font-size:.82rem}
+.nb .swipe-hint svg{width:16px;height:16px}
+.nb .b-cap{display:grid;gap:6px;margin-bottom:16px;min-height:9.5em}
+.nb .b-cap h3{font-size:1.6rem}
+.nb .b-cap p{color:var(--text-muted)}
+.nb .b-count{display:flex;align-items:center;gap:12px;margin-top:4px}
+.nb .b-count .progress{flex:1;margin:0}
+.nb .b-count .count{color:var(--text-faint);font-size:.8rem;font-variant-numeric:tabular-nums}
+.nb .rail-ctrl{display:flex;gap:8px;margin-top:12px;align-items:center}
+.nb .rail-ctrl button{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--border-default);background:var(--surface-card);color:var(--color-brand)}
+.nb .rail-ctrl button svg{width:16px;height:16px}
+.nb .rail-ctrl small{color:var(--text-faint);font-size:.78rem;margin-left:4px}
+.nb .progress{height:3px;background:var(--sand-200);border-radius:3px;margin-top:12px;overflow:hidden}
+.nb .progress i{display:block;height:100%;width:0;background:var(--teal-600);transition:width .5s var(--ease-out)}
+.nb .b-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 56px;align-items:end;padding-block:12px 32px}
+.nb .b-intro h2{font-size:clamp(1.9rem,3.8vw,2.8rem);margin-top:10px}
+.nb .b-intro p{color:var(--text-muted);max-width:58ch}
+.nb .b-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:start}
+.nb .b-pin{position:sticky;top:20px}
+.nb .b-pin .b-index{margin-bottom:14px}
+.nb .b-deck{justify-self:start;margin-bottom:0;max-width:100%}
+.nb .b-deck .page{font-size:.84rem;overflow:hidden}
+.nb .b-paper{padding:clamp(16px,2vw,26px);font-size:.84rem;display:flex;flex-direction:column}
+.nb .b-index{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.nb .b-index button{border:1px solid var(--border-default);background:var(--paper);border-radius:999px;padding:3px 10px;font-size:.74rem;color:var(--text-muted);transition:all .3s}
+.nb .b-index button.done{background:var(--color-brand-soft);border-color:var(--color-brand-soft);color:var(--color-brand)}
+.nb .b-index button.on{background:var(--color-brand);border-color:var(--color-brand);color:var(--text-on-brand)}
+.nb .b-view{position:relative;overflow:hidden;height:min(54vh,450px);border-top:1px solid var(--sand-200)}
+.nb .b-view .bp{position:absolute;inset:0;padding-top:12px;overflow:hidden;transition:opacity .45s,transform .55s var(--ease-out)}
+.nb .b-view .bp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40px;background:linear-gradient(transparent,var(--paper))}
+.nb .b-view .bp[data-state="before"]{opacity:0;transform:translateY(24px)}
+.nb .b-view .bp[data-state="after"]{opacity:0;transform:translateY(-24px)}
+.nb .b-steps{display:grid}
+.nb .b-step{min-height:66vh;display:flex;flex-direction:column;justify-content:flex-start;gap:14px;padding-block:26px 40px;border-top:1px solid var(--border-subtle);transition:opacity .4s}
+.nb .b-step:first-child{border-top:0}
+.nb .b-step:not(.on){opacity:.45}
+.nb .b-step h3{font-size:clamp(1.5rem,2.6vw,2rem)}
+.nb .b-step p{color:var(--text-muted);max-width:52ch;font-size:1.04rem}
+.nb .b-step .paper{display:none;padding:16px;font-size:.82rem;max-width:100%}
+.nb .b-end{padding-block:32px 8px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nb .c-band{background:var(--color-brand);color:var(--text-on-brand);padding-block:clamp(44px,6vw,84px)}
+.nb .c-band .eyebrow{color:var(--text-on-brand-muted)}
+.nb .c-band h2{color:var(--text-on-brand);font-size:clamp(1.9rem,3.8vw,2.8rem);margin:10px 0 12px}
+.nb .c-band .lede{color:var(--text-on-brand-muted);max-width:64ch}
+.nb .c-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:20px;margin-top:36px;align-items:stretch}
+.nb .c-list{background:var(--paper);color:var(--text-body);border-radius:18px;padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:6px}
+.nb .c-list h3{color:var(--color-brand);font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em}
+.nb .c-list .sub{color:var(--text-muted);font-size:.88rem;margin-bottom:8px}
+.nb .pick{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.nb .pick button{width:100%;text-align:left;display:grid;grid-template-columns:58px 1fr 18px;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--sand-200);border-radius:10px;padding:11px 12px;transition:background .25s,border-color .25s}
+.nb .pick button:hover{border-color:var(--teal-200);background:var(--color-brand-tint)}
+.nb .pick button .s{font-weight:700;color:var(--color-brand);font-size:.85rem}
+.nb .pick button .t{color:var(--text-strong);font-size:.92rem}
+.nb .pick button svg{width:16px;height:16px;color:var(--text-faint);transition:transform .3s var(--ease-out)}
+.nb .pick button[aria-pressed="true"]{background:var(--color-brand);border-color:var(--color-brand)}
+.nb .pick button[aria-pressed="true"] .s,.nb .pick button[aria-pressed="true"] .t,.nb .pick button[aria-pressed="true"] svg{color:var(--text-on-brand)}
+.nb .pick button[aria-pressed="true"] svg{transform:translateX(4px)}
+.nb .c-timer{height:3px;background:var(--sand-200);border-radius:3px;overflow:hidden;margin-top:10px}
+.nb .c-timer i{display:block;height:100%;width:0;background:var(--teal-600)}
+.nb .c-timer.run i{animation:ctime 5s linear forwards}
+
+@keyframes ctime{to{width:100%}}
+.nb .c-hint{font-size:.78rem;color:var(--text-faint);margin-top:6px}
+.nb .c-answer{position:relative;background:var(--surface-page);color:var(--text-body);border-radius:18px;padding:clamp(20px,2.6vw,32px);display:flex;flex-direction:column;gap:12px;overflow:hidden;min-height:100%}
+.nb .c-answer .from{font-family:var(--font-wordmark);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint)}
+.nb .c-answer .stepq{font-family:var(--font-display);font-style:italic;font-size:1.1rem;color:var(--text-strong);border-left:2px solid var(--teal-200);padding-left:12px}
+.nb .c-answer .arrow{display:flex;align-items:center;gap:8px;color:var(--color-brand);font-weight:700;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+.nb .c-answer .arrow svg{width:18px;height:18px}
+.nb .svc-card{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:14px;padding:16px}
+.nb .svc-card .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--color-brand-soft);color:var(--color-brand)}
+.nb .svc-card .ic svg{width:21px;height:21px}
+.nb .svc-card.yours .ic{background:var(--amber-soft);color:var(--amber)}
+.nb .svc-card .k{font-family:var(--font-wordmark);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint)}
+.nb .svc-card h4{font-size:1.3rem;margin:2px 0 6px}
+.nb .svc-card p{color:var(--text-muted);font-size:.93rem}
+.nb .c-cards{display:grid;gap:10px}
+.nb .c-answer .fade{animation:cin .5s var(--ease-out)}
+
+@keyframes cin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.nb .c-all{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.nb .c-all span.l{font-family:var(--font-wordmark);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-on-brand-muted);margin-right:4px}
+.nb .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(245,242,227,.25);border-radius:999px;padding:5px 12px;font-size:.84rem;color:var(--text-on-brand-muted);transition:all .3s}
+.nb .chip svg{width:14px;height:14px}
+.nb .chip.lit{background:var(--surface-page);border-color:var(--surface-page);color:var(--color-brand);font-weight:600}
+.nb .c-foot{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.nb .c-band .nb-btn-primary{background:var(--surface-page);color:var(--color-brand)}
+.nb .c-band .nb-btn-primary:hover{background:var(--surface-card)}
+.nb .c-band .nb-btn-ghost{border-color:rgba(245,242,227,.35);color:var(--text-on-brand)}
+.nb .c-band .nb-btn-ghost:hover{background:rgba(245,242,227,.08)}
+.nb .compare{padding-block:56px 72px}
+.nb .compare h2{font-size:1.6rem;margin-bottom:16px}
+.nb .cmp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.nb .cmp div{background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:14px;padding:18px;display:grid;gap:8px;align-content:start}
+.nb .cmp h3{font-size:1.1rem}
+.nb .cmp p{color:var(--text-muted);font-size:.93rem}
+.nb .cmp p b{color:var(--text-strong);font-weight:600}
+@media (max-width:1080px){.nb .a-grid{grid-template-columns:minmax(0,1fr)}
+.nb .deck{justify-self:center}
+
+}
+@media (max-width:760px){.nb .nb-flip{grid-template-columns:minmax(0,1fr)}
+.nb .nb-flip>*,.nb .a-grid>*{min-width:0}
+.nb .deck{margin-right:14px;margin-bottom:20px}
+.nb .deck .page{font-size:.8rem}
+.nb .rail-wrap{position:static;order:-1}
+.nb .rail{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.nb .rail li{flex:0 0 auto}
+.nb .rail button{grid-template-columns:auto auto;white-space:nowrap;border:1px solid var(--border-subtle)}
+.nb .b-intro{grid-template-columns:1fr}
+.nb .b-grid{gap:24px}
+.nb .b-paper{font-size:.74rem}
+.nb .b-step h3{font-size:1.35rem}
+.nb .b-step p{font-size:.95rem}
+.nb .nb-flip .deck{margin-right:20px}
+.nb .c-panel{grid-template-columns:minmax(0,1fr)}
+.nb .c-answer.inline{margin:6px 0 4px;border:1px solid var(--sand-200)}
+.nb .cmp{grid-template-columns:1fr}
+
+}
+@media (max-width:620px){.nb .b-grid{display:none}
+.nb .b-phone{display:block}
+
+}
+@media (prefers-reduced-motion:reduce){.nb *,.nb *::before,.nb *::after{transition:none!important;animation:none!important}
+
+}
+
 </style>
 </head>
 <body>
@@ -409,10 +663,10 @@ html{scroll-padding-top:82px}
         </div>
       </article>
       <article class="hw-card" style="--i:2">
-        <header class="hw-head"><b>3</b><h3>Your opportunity brief</h3><span class="hw-step">The Outcome</span></header>
+        <header class="hw-head"><b>3</b><h3>Your Opportunity Brief</h3><span class="hw-step">The Outcome</span></header>
         <div class="hw-body">
           <div>
-            <p>Within a week, you receive an opportunity brief showing where AI may fit, workflow by workflow, with an honest column for what doesn't need AI at all. We start with the tools you already have, and suggest a paid tool only when it's truly needed.</p>
+            <p>Within a week, you receive an Opportunity Brief showing where AI may fit, workflow by workflow, with an honest column for what doesn't need AI at all. We start with the tools you already have, and suggest a paid tool only when it's truly needed.</p>
           </div>
           <div class="hw-mock">
             <p class="hw-label">Where AI may fit (example)</p>
@@ -427,7 +681,7 @@ html{scroll-padding-top:82px}
         <header class="hw-head"><b>4</b><h3>What comes next</h3><span class="hw-step">Your Choice</span></header>
         <div class="hw-body">
           <div>
-            <p>Your opportunity brief recommends where to begin. Some teams take it forward on their own, and others continue with us on the next step. Whichever you choose, we're glad to keep supporting your team as its practice grows.</p>
+            <p>Your Opportunity Brief recommends where to begin. Some teams take it forward on their own, and others continue with us on the next step. Whichever you choose, we're glad to keep supporting your team as its practice grows.</p>
           </div>
           <div class="hw-mock">
             <p class="hw-label">Where teams often go next</p>
@@ -449,23 +703,42 @@ html{scroll-padding-top:82px}
   <div class="wrap">
     <p style="font-family:var(--font-wordmark);text-transform:uppercase;letter-spacing:0.12em;font-size:var(--text-lg);font-weight:600;color:var(--text-brand);margin:0 0 12px">WHAT WE DO</p>
     <p style="font-size:var(--text-xl);color:var(--text-muted);max-width:60ch;margin:0 0 32px;line-height:1.6">Most clients start with the Needs Assessment. Every service also stands on its own, so you can come in wherever it makes sense for you.</p>
+
+    <!-- Needs Assessment: sample AI Opportunity Brief -->
+    <div class="nb" id="needs-assessment">
+  <div class="b-intro">
+    <div><div class="eyebrow">Start here · Needs Assessment</div><h2>What's inside your AI Opportunity Brief</h2></div>
+    <p>The Needs Assessment is a paid service with one fixed price. It starts with a one-hour conversation with you, or with you and your team, and within a week you receive a written brief. What you share stays confidential. Here is what the brief covers, shown on a sample for a fictional office.</p>
+  </div>
+  <div class="b-grid">
+    <div class="b-pin"><div class="b-index" id="bIndex"></div><div class="deck b-deck" id="bDeck"></div></div>
+    <div class="b-steps" id="bSteps"></div>
+  </div>
+  <div class="nb-flip b-phone" id="flipB">
+    <div class="b-cap" aria-live="polite"><div class="sec-no"></div><h3></h3><p></p></div>
+    <div class="deck-wrap"><div class="deck" aria-live="polite"></div><button class="tap-hint" type="button" tabindex="-1"><i data-lucide="pointer"></i><span class="hint-txt">Tap the page to turn it</span></button></div>
+    <div class="b-count"><div class="progress"><i></i></div><small class="count"></small></div>
+    <div class="end-cta"><a class="nb-btn nb-btn-primary" href="https://outlook.office.com/bookwithme/user/71576d0866e04a41b15c3e62fdb038ab@fictioconsulting.ca/meetingtype/Nb4G7QrGpEKzgjlHNvqwOw2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Book a free conversation <i data-lucide="arrow-right"></i></a><p>A free 20-minute call. We talk about where your work gets stuck and decide together whether a Needs Assessment is the right next step.</p></div>
+  </div>
+    </div>
+    <p class="services-more">Other services</p>
     <div class="services-grid">
 
       <!-- Row 1 -->
-      <button class="pcard" onclick="toggleDetail('readiness',1)" id="card-readiness">
-        <div class="pcard-header">
-          <span class="picon"><i data-lucide="compass"></i></span>
-          <span class="svc-titlewrap"><span class="svc-title">Needs Assessment</span></span>
-        </div>
-        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">An hour on how your work moves, and an AI Opportunity Brief within a week.</p>
-        <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
-      </button>
       <button class="pcard" onclick="toggleDetail('literacy',1)" id="card-literacy">
         <div class="pcard-header">
           <span class="picon"><i data-lucide="graduation-cap"></i></span>
           <span class="svc-titlewrap"><span class="svc-title">AI Literacy Training</span></span>
         </div>
         <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Hands-on workshops that start with the AI tools you already have and build around the way you work.</p>
+        <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
+      </button>
+      <button class="pcard" onclick="toggleDetail('onboarding',1)" id="card-onboarding">
+        <div class="pcard-header">
+          <span class="picon"><i data-lucide="rocket"></i></span>
+          <span class="svc-titlewrap"><span class="svc-title">AI Platform Onboarding</span></span>
+        </div>
+        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Your team has chosen Microsoft 365 Copilot or Claude. We help everyone put it to work on real tasks.</p>
         <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
       </button>
 
@@ -489,20 +762,20 @@ html{scroll-padding-top:82px}
       </div>
 
       <!-- Row 2 -->
-      <button class="pcard" onclick="toggleDetail('onboarding',2)" id="card-onboarding">
-        <div class="pcard-header">
-          <span class="picon"><i data-lucide="rocket"></i></span>
-          <span class="svc-titlewrap"><span class="svc-title">AI Platform Onboarding</span></span>
-        </div>
-        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Your team has chosen Microsoft 365 Copilot or Claude. We help everyone put it to work on real tasks.</p>
-        <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
-      </button>
       <button class="pcard" onclick="toggleDetail('loop',2)" id="card-loop">
         <div class="pcard-header">
           <span class="picon"><i data-lucide="refresh-cw"></i></span>
           <span class="svc-titlewrap"><span class="svc-title">Learning Loop</span></span>
         </div>
         <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Learn, apply, share and refine, with your own champion keeping practice going between sessions.</p>
+        <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
+      </button>
+      <button class="pcard" onclick="toggleDetail('responsible',2)" id="card-responsible">
+        <div class="pcard-header">
+          <span class="picon"><i data-lucide="shield-check"></i></span>
+          <span class="svc-titlewrap"><span class="svc-title">Responsible AI Use</span></span>
+        </div>
+        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Plain-language guardrails: which tools, what information can go where, and how to check the output.</p>
         <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
       </button>
 
@@ -526,15 +799,7 @@ html{scroll-padding-top:82px}
       </div>
 
       <!-- Row 3 -->
-      <button class="pcard" onclick="toggleDetail('responsible',3)" id="card-responsible">
-        <div class="pcard-header">
-          <span class="picon"><i data-lucide="shield-check"></i></span>
-          <span class="svc-titlewrap"><span class="svc-title">Responsible AI Use</span></span>
-        </div>
-        <p style="margin:0 0 18px;color:var(--text-muted);font-size:var(--text-md);line-height:1.6;flex:1">Plain-language guardrails: which tools, what information can go where, and how to check the output.</p>
-        <span class="learn">Learn more <i data-lucide="arrow-right"></i></span>
-      </button>
-      <button class="pcard" onclick="toggleDetail('ongoing',3)" id="card-ongoing">
+      <button class="pcard span-2" onclick="toggleDetail('ongoing',3)" id="card-ongoing">
         <div class="pcard-header">
           <span class="picon"><i data-lucide="messages-square"></i></span>
           <span class="svc-titlewrap"><span class="svc-title">Ongoing AI Advisory</span></span>
@@ -776,7 +1041,7 @@ const SERVICES = {
     ]
   },
   onboarding: {
-    icon: 'rocket', kicker: 'Copilot or Claude · Getting started', panel: 2,
+    icon: 'rocket', kicker: 'Copilot or Claude · Getting started', panel: 1,
     title: 'AI Platform Onboarding',
     long: "For a team that has chosen its tool. We review your licences and use cases, run two or three sessions on your real work in Microsoft 365 Copilot or Claude, and leave you with a written adoption guide, so people are not just aware of the tool but ready to use it.",
     gets: [
@@ -796,7 +1061,7 @@ const SERVICES = {
     ]
   },
   responsible: {
-    icon: 'shield-check', kicker: 'Policy · Guardrails', panel: 3,
+    icon: 'shield-check', kicker: 'Policy · Guardrails', panel: 2,
     title: 'Responsible AI Use',
     long: "Many teams are already using AI, often without shared rules. We help you put plain-language guardrails in place: an AI use policy built from your AI Opportunity Brief, or a review of what staff are actually using and what should change. It covers approved tools, what information can go into which tool, checking AI output, disclosure, and AI-specific scams. This is practical guidance, not legal advice.",
     gets: [
@@ -958,6 +1223,289 @@ function handleContact(e) {
   addEventListener('resize', layout);
   layout();
   if (document.fonts) document.fonts.ready.then(layout);
+})();
+</script>
+
+<script>
+/* Needs Assessment sample brief: wrapped so its names stay out of the rest of the page */
+(function(){
+function navH(){const h=document.querySelector('body > header');return h?h.offsetHeight:0}
+
+/* One fictional sample brief, shared by all three options. No real client details. */
+const LEG=`<div class="legend"><span><span class="fit-y">✓</span> AI helps</span><span><span class="fit-q">?</span> Worth testing</span><span><span class="fit-n">✗</span> Not an AI problem</span></div>`;
+/* Partial view: each page shows its opening for real, then placeholder bars. The withheld text is not in the page at all. */
+const SK=(ws)=>`<div class="veil" aria-hidden="true">${ws.map(w=>`<i style="width:${w}%"></i>`).join('')}</div>`;
+const SKT=(n)=>`<div class="veil veil-t" aria-hidden="true">${Array.from({length:n},(_,k)=>`<span><i style="width:${70-k*7}%"></i><i style="width:${30+k*9}%"></i><i style="width:${88-k*5}%"></i></span>`).join('')}</div>`;
+const CONT=(t)=>`<p class="cont"><i data-lucide="file-lock-2"></i><span>${t}</span></p>`;
+const TOTAL=9;
+const BRIEF=[
+{key:'ov',short:'Overview',label:'At the top',page:1,
+ why:'A short summary of where you lose the most time and the first step we suggest. Anyone can read it in a minute.',
+ html:`<div class="sec-no">Needs Assessment · Prepared for a property management office · October 2026</div>
+ <h3 style="font-size:1.7em;text-transform:none;letter-spacing:0;color:var(--text-strong)">AI Opportunity Brief</h3>
+ <div class="ov"><b>Overview.</b> The office loses the most time in two places: maintenance requests that arrive by email, text and phone and get retyped by hand, and owner reports rebuilt from scratch every month. The first needs one shared form, not AI. The second is a good first job for Copilot Chat, which every staff member already has through their work account. A paid AI licence is not needed yet.</div>
+ <div class="sec-no" style="margin-bottom:6px">Table of contents</div>
+ <ol class="toc"><li><b>1</b>What we heard<span class="d"></span><em>2</em></li><li><b>2</b>Where you are now<span class="d"></span><em>3</em></li><li><b>3</b>Where AI fits<span class="d"></span><em>4</em></li><li><b>4</b>Open questions<span class="d"></span><em>6</em></li><li><b>5</b>What to do next<span class="d"></span><em>7</em></li><li><b>6</b>Working with Fictio<span class="d"></span><em>9</em></li></ol>`},
+{key:'heard',short:'What we heard',label:'Section 1',page:2,
+ why:'Your challenges and goals, in your own words. If more than one person takes part, we note who, so you know whose views it reflects.',
+ html:`<div class="sec-no">Section 1 of 6</div><h3>What we heard</h3>
+ <p class="scope">This reflects one conversation with the office manager and one property coordinator. The maintenance staff and the building owners were not part of it.</p>
+ <p class="quote">"Requests come in by email, by text and by phone, and I retype every one of them into the spreadsheet. Some never make it in."</p>
+ <p class="quote">"Friday afternoon is owner reports. Same format every month, and I still build each one from nothing."</p>
+ ${SK([94,88,60,0,40,82,76,70])}${CONT('This section continues with more of what we heard and what the office wants to change.')}`},
+{key:'now',short:'Where you are now',label:'Section 2',page:3,
+ why:'The tools and licences you already have, including any AI tools and how they are being used, and where your files are kept. Where files are kept affects what an AI tool can see.',
+ html:`<div class="sec-no">Section 2 of 6</div><h3>Where you are now</h3>
+ <table><thead><tr><th>Tool</th><th>Used for</th><th>AI access</th></tr></thead><tbody>
+ <tr><td>Microsoft 365 Business Standard</td><td>Email, Teams, Word, Excel</td><td>Copilot Chat, included with every work account</td></tr>
+ <tr><td>Property management software</td><td>Leases, rent, tenant records</td><td>None. Exports to Excel</td></tr>
+ </tbody></table>
+ ${SKT(2)}${SK([90,84,0,92,66])}${CONT('This section continues with the rest of the tool inventory, comfort by role, and where the files live.')}`},
+{key:'fits',short:'Where AI fits',label:'Section 3',page:4,
+ why:'Each task we discussed, marked where AI may help now, where a small trial makes sense first, and where AI is not needed. Sometimes the best fix is a simple form or formula.',
+ html:`<div class="sec-no">Section 3 of 6</div><h3>Where AI fits</h3>${LEG}
+ <table><thead><tr><th>Workflow</th><th>Fit</th><th>Why</th></tr></thead><tbody>
+ <tr><td>Maintenance requests</td><td class="fit fit-n">✗</td><td>One Microsoft Form feeding one list. A process change, no AI.</td></tr>
+ <tr><td>Monthly owner reports</td><td class="fit fit-y">✓</td><td>Copilot Chat drafts the summary from the month's notes and the Excel export. A coordinator checks every figure.</td></tr>
+ </tbody></table>
+ ${SKT(4)}${CONT('This section continues with every workflow we discussed.')}`},
+{key:'open',short:'Open questions',label:'Section 4',page:6,
+ why:'Decisions to settle before you act, such as what staff can safely put into an AI tool. Each one is linked to the step it affects.',
+ html:`<div class="sec-no">Section 4 of 6</div><h3>Open questions</h3>
+ <ul><li><b>Can tenant names and unit numbers go into Copilot Chat?</b> This affects routine tenant emails (Step 4). The office needs a written answer before anyone pastes tenant details.</li></ul>
+ ${SK([92,86,74,0,90,80,58])}${CONT('This section continues with the other questions to settle first, each tied to the step it affects.')}`},
+{key:'next',short:'What to do next',label:'Section 5',page:7,
+ why:'Clear steps in order, with why each one matters. Steps that use an AI tool come with instructions you can follow on your own.',
+ html:`<div class="sec-no">Section 5 of 6</div><h3>What to do next</h3>
+ <table><thead><tr><th>Step</th><th>What to do</th><th>Why it matters</th></tr></thead><tbody>
+ <tr><td class="step">Step 1</td><td>Set up one Microsoft Form for maintenance requests and post the link in every building.</td><td>Ends the retyping and the lost requests. No AI needed.</td></tr>
+ <tr><td class="step">Step 2</td><td>Draft next month's owner report with Copilot Chat, using the prompt provided.</td><td>The format is the same every month.</td></tr>
+ </tbody></table>
+ ${SKT(3)}${CONT('This section continues with the remaining steps, with instructions where a step needs them.')}`},
+{key:'fictio',short:'Working with Fictio',label:'Section 6',page:9,
+ why:'Which steps you can take on your own, and where we could help if you would like support. There is no obligation.',
+ html:`<div class="sec-no">Section 6 of 6</div><h3>Working with Fictio</h3>
+ <p>Steps 1 and 5 are yours to take on, and this brief covers what you need for both.</p>
+ ${SK([94,90,84,40])}${CONT('This section continues with where we could start together.')}`}
+];
+const LH=`<div class="lh"><span class="mark"><i>FF</i>Fictio</span><span class="ttl">AI Opportunity Brief<span class="sample">Sample</span></span></div>`;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---- Flip-through deck, used by A and by B on phones ---- */
+/* One wheel listener for both sections.
+   Scrolling up is never captured, so visitors can always get back to the top.
+   Scrolling down never skips: it turns one page (A) or section (B) at a time. */
+/* Scroll tuning, in one place. Times are in milliseconds.
+   TURN_HOLD: pause after each page turn (A) or section move (B) before the next scroll counts.
+   ARRIVE_HOLD: minimum hold when a section first catches the visitor; it also waits for a QUIET gap in scrolling.
+   There is no skip: every scroll turns at most one page, and after the last page the visitor carries on down the page. */
+const TUNE={TURN_HOLD:1000,ARRIVE_HOLD:1000,QUIET:300};
+const WG={last:0,lastD:0,hist:[],jumpUntil:0,absorbing:false,absorbMin:0,handlers:[],exits:[]};
+/* Called when a section catches the visitor on the way in: the scroll that brought them here is absorbed,
+   so it holds on the brief until they pause, and only the next scroll turns a page. */
+WG.arrive=()=>{const now=performance.now();WG.absorbing=true;WG.absorbMin=now+TUNE.ARRIVE_HOLD;WG.hist=[]};
+addEventListener('wheel',e=>{
+  const now=performance.now(),d=Math.abs(e.deltaY),dir=Math.sign(e.deltaY),prev=WG.last;
+  const fresh=(now-prev>140)||(d>=40&&d>=WG.lastD*0.9);
+  WG.last=now;WG.lastD=d;
+  if(WG.absorbing){
+    if(dir>0&&(now<WG.absorbMin||now-prev<TUNE.QUIET)){e.preventDefault();return}
+    WG.absorbing=false;WG.hist=[];
+  }
+  if(now<WG.jumpUntil){e.preventDefault();return}
+  if(d<2||!dir||dir<0)return;                      /* scrolling up is never captured */
+  for(const h of WG.handlers){if(h(dir,e,fresh))break}
+},{passive:false});
+const HINT_KEY='fictioDeckHintSeen';
+let hintSeen=false;try{hintSeen=localStorage.getItem(HINT_KEY)==='1'}catch(e){}
+const touch=matchMedia('(pointer: coarse)').matches;
+function hideHints(){hintSeen=true;document.querySelectorAll('.tap-hint').forEach(h=>h.classList.add('gone'));try{localStorage.setItem(HINT_KEY,'1')}catch(e){}}
+function buildDeck(root,opt={}){
+  const deck=root.querySelector('.deck'),rail=root.querySelector('.rail'),prog=root.querySelector('.progress i'),note=root.querySelector('.auto-note'),hint=root.querySelector('.tap-hint'),count=root.querySelector('.count'),cap=root.querySelector('.b-cap');
+  let cur=0,timer=null,stopped=false,swiped=false,sx=0,sy=0;
+  if(hint){hint.querySelector('.hint-txt').textContent=touch?'Tap or swipe to turn the page':(opt.wheel?'Scroll to turn the page':'Click the page to turn it');if(hintSeen)hint.classList.add('gone')}
+  BRIEF.forEach((s,i)=>{
+    const el=document.createElement('article');
+    el.className='paper page bp';
+    el.innerHTML=`${LH}<div class="body">${s.html}</div><div class="pfoot"><span>Sample brief · fictional client</span><span>Page ${s.page} of ${TOTAL}</span></div>`;
+    deck.appendChild(el);
+    if(rail){const li=document.createElement('li');li.innerHTML=`<button type="button"><b>${i===0?'·':i}</b><span>${s.short}</span></button>`;li.firstChild.addEventListener('click',()=>{stop();go(i)});rail.appendChild(li)}
+  });
+  const pages=[...deck.children],btns=rail?[...rail.querySelectorAll('button')]:[];
+  function size(){pages.forEach(p=>p.style.minHeight='0');const h=Math.max(...pages.map(p=>p.offsetHeight));pages.forEach(p=>p.style.minHeight=h+'px');deck.style.height=h+'px'}
+  function go(i){
+    cur=(i+pages.length)%pages.length;
+    pages.forEach((el,k)=>{
+      const d=k-cur;
+      if(d<0){el.style.transform='translateX(-6%) rotateY(-32deg)';el.style.opacity='0';el.style.pointerEvents='none';el.style.zIndex=100+k}
+      else{const v=Math.min(d,3);const o=innerWidth<760?6:11;el.style.transform=`translate(${v*o}px,${v*o}px)`;el.style.opacity=d>3?'0':'1';el.style.filter=d?`brightness(${1-v*.035})`:'none';el.style.pointerEvents=d?'none':'auto';el.style.zIndex=50-d}
+      el.setAttribute('aria-hidden',d!==0);
+    });
+    btns.forEach((b,k)=>b.setAttribute('aria-current',k===cur));
+    prog.style.width=((cur+1)/pages.length*100)+'%';
+    if(count)count.textContent=`${cur+1} / ${pages.length}`;
+    root.querySelectorAll('.end-cta').forEach(c=>c.classList.toggle('show',cur===pages.length-1));
+    if(cur===pages.length-1&&timer){clearInterval(timer);timer=null}
+    if(cap){const s=BRIEF[cur];cap.querySelector('.sec-no').textContent=s.label;cap.querySelector('h3').textContent=s.short;cap.querySelector('p').textContent=s.why}
+  }
+  function stop(){stopped=true;clearInterval(timer);timer=null;if(note)note.textContent=touch?'Tap the page or a section name to keep reading':'Scroll, click the page, or pick a section'}
+  function play(){if(reduce||stopped||timer)return;timer=setInterval(()=>go(cur+1),5500)}
+  function turn(dir){stop();hideHints();const n=cur+dir;if(n<0){go(cur);return}go(n>=pages.length?0:n)}  /* a tap on the last page starts the brief again */
+  deck.addEventListener('click',()=>{if(swiped){swiped=false;return}turn(1)});
+  if(hint)hint.addEventListener('click',()=>turn(1));
+  /* Swipe: on touch screens the browser claims a sideways drag for itself unless told otherwise,
+     so the page keeps vertical scrolling (pan-y) and hands sideways drags to us. The top page follows the finger. */
+  deck.style.touchAction='pan-y';
+  let tdx=0,tdy=0,dragging=false;
+  deck.addEventListener('touchstart',e=>{const t=e.touches[0];sx=t.clientX;sy=t.clientY;tdx=tdy=0;dragging=false},{passive:true});
+  deck.addEventListener('touchmove',e=>{const t=e.touches[0];tdx=t.clientX-sx;tdy=t.clientY-sy;
+    if(!dragging&&Math.abs(tdx)>10&&Math.abs(tdx)>Math.abs(tdy))dragging=true;
+    if(dragging){const top=pages[cur];top.style.transition='none';top.style.transform=`translateX(${tdx*0.6}px) rotate(${tdx*0.015}deg)`}},{passive:true});
+  deck.addEventListener('touchend',()=>{const top=pages[cur];top.style.transition='';
+    if(dragging){swiped=true;if(Math.abs(tdx)>45)turn(tdx<0?1:-1);else go(cur)}dragging=false});
+  deck.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;sx=e.clientX;sy=e.clientY});
+  deck.addEventListener('pointerup',e=>{if(e.pointerType!=='mouse')return;const dx=e.clientX-sx,dy=e.clientY-sy;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){swiped=true;turn(dx<0?1:-1)}});
+  if(reduce&&note)note.textContent='';
+  size();go(0);
+  addEventListener('resize',size);
+  document.fonts&&document.fonts.ready.then(size);
+  new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){size();play()}else{clearInterval(timer);timer=null}}),{threshold:.35}).observe(deck);
+  /* Scroll to turn the page: once the brief is in view, each wheel notch turns one page, then holds briefly.
+     Before the first page and after the last, the page scrolls normally. Touch screens keep tap and swipe. */
+  if(opt.wheel){
+    const HOLD=TUNE.TURN_HOLD;let lockUntil=0,lastWheel=0,lastDelta=0;
+    const locked=()=>performance.now()<lockUntil;
+    const alignTop=()=>Math.max(20,(innerHeight-deck.offsetHeight)/2);
+    const anchorY=()=>deck.getBoundingClientRect().top+scrollY-alignTop();
+    /* Like B: the whole stretch around the brief catches a downward scroll, including when a fast scroll has already
+       carried the brief past its resting spot. Once the visitor has gone past the last page, it lets them go. */
+    let released=false;
+    function zone(dir){
+      const y=scrollY,t=anchorY(),vh=innerHeight;
+      if(released){if(y<t-vh*0.9||y>t+vh*0.9)released=false;else if(Math.abs(y-t)>8)return null}
+      if(Math.abs(y-t)<=8){const n=cur+dir;if(n>=0&&n<pages.length)return {page:n};released=true;return null}
+      if(dir>0&&y<t&&y>t-vh*0.9)return {snap:true};
+      if(dir>0&&y>t&&y<t+vh*0.7)return {snap:true};
+      return null;
+    }
+    function act(dir,e,fresh){
+      if(narrow())return false;
+      const z=zone(dir);
+      if(!z&&!locked())return false;
+      e.preventDefault();
+      if(locked()||!fresh||!z)return true;
+      lockUntil=performance.now()+HOLD;
+      if(z.snap){WG.arrive();scrollTo({top:anchorY(),behavior:reduce?'auto':'smooth'});return true}
+      stop();hideHints();go(z.page);return true;
+    }
+    const narrow=()=>matchMedia('(pointer: coarse)').matches&&!matchMedia('(any-pointer: fine)').matches;
+    WG.handlers.push(act);
+    const band=root.closest('.nb');
+    WG.exits.push(()=>{if(narrow())return null;const t=anchorY();if(Math.abs(scrollY-t)>8)return null;released=true;return band.getBoundingClientRect().bottom+scrollY-40});
+    addEventListener('keydown',e=>{
+      const map={ArrowDown:1,PageDown:1};
+      if(!(e.key in map)||e.target.closest('input,textarea'))return;
+      act(map[e.key],e,true);
+    });
+  }
+}
+const flipA=document.getElementById('flipA');if(flipA)buildDeck(flipA,{wheel:true});
+const flipB=document.getElementById('flipB');if(flipB)buildDeck(flipB);
+
+/* ---- Option B: pinned brief, scroll-driven ---- */
+(function(){
+  if(!document.getElementById('bDeck'))return;
+  const deckB=document.getElementById('bDeck'),idx=document.getElementById('bIndex'),steps=document.getElementById('bSteps');
+  deckB.innerHTML=BRIEF.map((s,i)=>`<article class="paper page bp" data-i="${i}">${LH}<div class="body">${s.html}</div><div class="pfoot"><span>Sample brief · fictional client</span><span>Page ${s.page} of ${TOTAL}</span></div></article>`).join('');
+  idx.innerHTML=BRIEF.map((s,i)=>`<button type="button" data-i="${i}">${i===0?'Overview':i}</button>`).join('');
+  steps.innerHTML=BRIEF.map((s,i)=>`<div class="b-step" data-i="${i}"><div class="sec-no">${s.label}</div><h3>${s.short}</h3><p>${s.why}</p>${i===BRIEF.length-1?'<div class="end-cta"><a class="btn btn-primary" href="#top">Book a free conversation <i data-lucide="arrow-right"></i></a><p>A free 20-minute call. We talk about where your work gets stuck and decide together whether a Needs Assessment is the right next step.</p></div>':''}<div class="paper bp">${s.html}</div></div>`).join('');
+  const panes=[...deckB.children],pills=[...idx.children],rows=[...steps.children];
+  /* Size the stack to its tallest page, capped to the window but never squashed below a readable height.
+     Both limits are cleared before measuring, so a small window at load (or a resize) can't leave the pages stuck short. */
+  function sizeB(){
+    panes.forEach(p=>{p.style.minHeight='';p.style.maxHeight=''});
+    const natural=Math.max(...panes.map(p=>p.offsetHeight));
+    const h=Math.max(Math.min(natural,innerHeight-navH()-110),Math.min(natural,520));
+    panes.forEach(p=>{p.style.minHeight=h+'px';p.style.maxHeight=h+'px'});deckB.style.height=h+'px';
+    try{fitLast()}catch(e){}
+  }
+  sizeB();addEventListener('resize',sizeB);addEventListener('load',sizeB);document.fonts&&document.fonts.ready.then(sizeB);
+  new IntersectionObserver(es=>{if(es[0].isIntersecting)sizeB()}).observe(deckB);
+  let cur=-1;
+  function set(i){
+    if(i===cur)return;cur=i;
+    /* the stack of paper from A: earlier pages flip away to the left, later ones wait underneath */
+    panes.forEach((el,k)=>{const d=k-i;
+      if(d<0){el.style.transform='translateX(-6%) rotateY(-32deg)';el.style.opacity='0';el.style.pointerEvents='none';el.style.zIndex=100+k}
+      else{const v=Math.min(d,3);el.style.transform=`translate(${v*11}px,${v*11}px)`;el.style.opacity=d>3?'0':'1';el.style.filter=d?`brightness(${1-v*.035})`:'none';el.style.pointerEvents=d?'none':'auto';el.style.zIndex=50-d}
+      el.setAttribute('aria-hidden',d!==0)});
+    pills.forEach((p,k)=>{p.classList.toggle('on',k===i);p.classList.toggle('done',k<i)});
+    rows.forEach((r,k)=>r.classList.toggle('on',k===i));
+    const ec=steps.querySelector('.end-cta');if(ec)ec.classList.toggle('show',i===rows.length-1);
+  }
+  /* Step-by-step scrolling: one gesture moves exactly one section, the section lines up with the top of the brief, then holds briefly. */
+  const HOLD=TUNE.TURN_HOLD;let PIN_TOP=navH()+20;const pinBox=document.querySelector('.nb .b-pin');function setPin(){PIN_TOP=navH()+20;pinBox.style.top=PIN_TOP+'px'}setPin();addEventListener('resize',setPin);
+  const narrow=()=>innerWidth<=620;
+  const target=k=>rows[k].getBoundingClientRect().top+scrollY-PIN_TOP;
+  let lockUntil=0,lastWheel=0,lastDelta=0;
+  const locked=()=>performance.now()<lockUntil;
+  function nearest(){let best=0,bd=1e9;rows.forEach((r,k)=>{const d=Math.abs(r.getBoundingClientRect().top-PIN_TOP);if(d<bd){bd=d;best=k}});return best}
+  function onScroll(){if(!locked())set(nearest())}
+  function goTo(k){
+    k=Math.max(0,Math.min(rows.length-1,k));set(k);
+    lockUntil=performance.now()+HOLD;
+    scrollTo({top:target(k),behavior:reduce?'auto':'smooth'});
+  }
+  /* Keep the last section tall enough that the pinned brief never gets pushed up */
+  const pinEl=document.querySelector('.b-pin');
+  function fitLast(){const last=rows[rows.length-1];last.style.minHeight='';if(narrow())return;const need=pinEl.offsetHeight+24;if(last.offsetHeight<need)last.style.minHeight=need+'px'}
+  fitLast();addEventListener('resize',fitLast);document.fonts&&document.fonts.ready.then(fitLast);
+  const servicesEl=document.getElementById('services');
+  const introY=()=>servicesEl.getBoundingClientRect().top+scrollY-navH();
+  function zone(dir){
+    /* returns the step to go to, or null to let the page scroll normally */
+    const y=scrollY,t0=target(0),tn=target(rows.length-1),near=innerHeight*0.55,k=nearest();
+    const tI=introY();                                    /* the "What we do" heading, just below the site header */
+    if(dir>0&&y<tI-4)return y>tI-near?'intro':null;       /* arriving from above: stop on "What we do" first */
+    if(dir>0&&y<t0-4)return 0;                            /* from "What we do", the next scroll brings up the overview */
+    if(dir<0&&y>tn+4)return y<tn+near?rows.length-1:null; /* arriving from below */
+    if(dir>0&&k===rows.length-1&&Math.abs(y-tn)<12)return 'end'; /* after the last section: bring the footer up */
+    const n=k+dir;
+    return (n>=0&&n<rows.length)?n:null;                 /* inside: one section per gesture */
+  }
+  function handle(dir,e,fresh=true){
+    if(narrow()||dir<0)return false;
+    const k=zone(dir);
+    if(k===null&&!locked())return false; /* outside the section: normal scrolling */
+    e.preventDefault();
+    if(locked()||!fresh||k===null)return true;
+    if(k==='end'){lockUntil=performance.now()+HOLD;const end=steps.closest('.nb').getBoundingClientRect().bottom+scrollY-navH();scrollTo({top:Math.min(document.documentElement.scrollHeight-innerHeight,end),behavior:reduce?'auto':'smooth'});return true}
+    if(k==='intro'){WG.arrive();lockUntil=performance.now()+HOLD;scrollTo({top:introY(),behavior:reduce?'auto':'smooth'});return true}
+    goTo(k);return true;
+  }
+  WG.handlers.push(handle);
+  const bSec=steps.closest('.nb');
+  WG.exits.push(()=>{if(narrow())return null;const y=scrollY,t0=target(0),tn=target(rows.length-1);return (y>=t0-8&&y<tn+8)?bSec.getBoundingClientRect().bottom+scrollY-40:null});
+  addEventListener('keydown',e=>{
+    const map={ArrowDown:1,PageDown:1,' ':1};
+    if(!(e.key in map)||e.target.closest('input,textarea,button'))return;
+    handle(map[e.key],e);
+  });
+  let ty=null;
+  addEventListener('touchstart',e=>{ty=e.touches[0].clientY},{passive:true});
+  addEventListener('touchmove',e=>{if(ty===null||narrow())return;const dy=ty-e.touches[0].clientY;if(Math.abs(dy)<24){if(locked())e.preventDefault();return}handle(Math.sign(dy),e);ty=null},{passive:false});
+  pills.forEach((p,k)=>p.addEventListener('click',()=>goTo(k)));
+  deckB.addEventListener('click',()=>{if(cur<rows.length-1)goTo(cur+1)});
+  deckB.style.cursor='pointer';
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll);
+  set(0);onScroll();
+})();
+
+
+
+if(window.lucide)lucide.createIcons();
+
 })();
 </script>
 </body>
