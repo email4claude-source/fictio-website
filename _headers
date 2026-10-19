@@ -1,11 +1,10 @@
 # Netlify response headers for every path.
-# The Content-Security-Policy starts as Report-Only: browsers log what it would
-# block to the console but block nothing. Once a deploy shows no violations,
-# including after a real form submission, rename the header to
-# Content-Security-Policy to enforce it.
+# The Content-Security-Policy is enforced (it was Report-Only until a real form
+# submission on the deploy preview showed no violations, 2026-10-19). If a new
+# outside service is added to the page, add its address here or it will be blocked.
 /*
   Strict-Transport-Security: max-age=31536000
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://*.hsforms.net https://*.hsforms.com https://google.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.hsforms.com https://*.hsforms.net https://*.hubspot.com https://www.gstatic.com https://www.google.com; frame-src https://*.hsforms.net https://*.hsforms.com https://google.com https://www.google.com https://recaptcha.google.com; connect-src 'self' https://*.hsforms.com https://*.hsforms.net https://*.hubspot.com https://*.hubapi.com https://google.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.hsforms.com https://*.hubspot.com; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://*.hsforms.net https://*.hsforms.com https://google.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.hsforms.com https://*.hsforms.net https://*.hubspot.com https://www.gstatic.com https://www.google.com; frame-src https://*.hsforms.net https://*.hsforms.com https://google.com https://www.google.com https://recaptcha.google.com; connect-src 'self' https://*.hsforms.com https://*.hsforms.net https://*.hubspot.com https://*.hubapi.com https://google.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.hsforms.com https://*.hubspot.com; frame-ancestors 'none'
