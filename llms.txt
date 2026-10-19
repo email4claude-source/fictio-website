@@ -1,0 +1,28 @@
+# Fictio Consulting
+
+> Practical AI fluency for small businesses and educators. Fictio Consulting builds hands-on AI skills that fit the way people actually work, starting with the tools people already have. Based in Eastern Ontario, serving clients across Canada.
+
+Fictio Consulting works with both individuals and teams. Some clients are a single educator or business owner building their own skills before rolling anything out to a team; others are a department or staff group ready to train together. Work is remote by default, with clients anywhere in Canada. On-site sessions are available in Eastern Ontario where there is a room where everyone can work at a computer together.
+
+The supported platforms are Microsoft 365 Copilot (including Copilot Chat) and Anthropic Claude.
+
+The first step is a free 20-minute conversation on Microsoft Teams, with no preparation needed and no obligation.
+
+## Services
+
+- [Needs Assessment](https://fictioconsulting.ca/#needs-assessment): Most clients start here. A paid service with one fixed price. It starts with a one-hour conversation with you, or with you and your team, about how your work moves. Within a week you receive a written AI Opportunity Brief showing where AI may fit, workflow by workflow, and where the honest answer is a process change rather than AI. What you share stays confidential.
+- [AI Literacy Training](https://fictioconsulting.ca/#services): Half-day or full-day hands-on workshops built around your team's real work, starting with the AI tools you already have. Online anywhere in Canada, or on-site in Eastern Ontario.
+- [AI Platform Onboarding](https://fictioconsulting.ca/#services): For a team that has chosen Microsoft 365 Copilot or Claude. A review of licences and use cases, two or three sessions on your real work, and a written adoption guide.
+- [Learning Loop](https://fictioconsulting.ca/#services): Learn, apply, share and refine, with your own internal champion keeping practice going between sessions.
+- [Responsible AI Use](https://fictioconsulting.ca/#services): Plain-language guardrails: an AI use policy covering approved tools, what information can go into which tool, checking AI output, disclosure, and AI-specific scams. Practical guidance, not legal advice.
+- [Ongoing AI Advisory](https://fictioconsulting.ca/#services): A monthly session, answers between sessions, a look at new tools as they appear, and a quarterly check-in.
+
+## About
+
+- [About Fictio Consulting](https://fictioconsulting.ca/#about): Founded by Patrick Hymus. Master of Education; Anthropic Academy and Microsoft Learn AI certifications; more than twenty years teaching adults; insured for technology E&O and general liability.
+- [FAQ](https://fictioconsulting.ca/#faq): Common questions, including where to start, working with individuals or teams, and on-site or remote work.
+
+## Contact
+
+- Email: hello@fictioconsulting.ca
+- [LinkedIn](https://www.linkedin.com/company/fictio-consulting/)
